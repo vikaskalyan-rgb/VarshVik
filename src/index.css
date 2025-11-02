@@ -1261,12 +1261,15 @@ body.slide .oliven-nav-toggle {
 .organization .bord-box {
   overflow: hidden;
   background-image: url(./assets/images/slider.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .organization .item-box {
   padding: 60px 30px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* Darker overlay by default */
-  color: #fff; /* White text by default */
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
   border: 1px solid #F6F1F0;
   border-right: 0;
   -webkit-transition: all .4s;
@@ -1276,16 +1279,16 @@ body.slide .oliven-nav-toggle {
     border-right: 1px solid #F6F1F0; 
 }
 .organization .item-box:hover {
-    background-color: rgba(0, 0, 0, 0.9); /* Slightly darker on hover */
+    background-color: rgba(0, 0, 0, 0.9);
     color: #fff; }
 .organization .item-box p {
-    color: #fff; /* White text for paragraphs */
+    color: #fff;
 }
 .organization .item-box:hover p {
     color: #fff; 
 }
 .organization .item-box .title {
-    color: #fff; /* White text for titles */
+    color: #fff;
 }
 .organization .item-box:hover .title {
     color: #FFF; 
@@ -1317,7 +1320,7 @@ body.slide .oliven-nav-toggle {
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.85); /* Much darker overlay by default */
+      background: rgba(0, 0, 0, 0.85);
       -webkit-transition: all .4s;
       -o-transition: all .4s;
       transition: all .4s;
@@ -1327,10 +1330,19 @@ body.slide .oliven-nav-toggle {
       color: #fff; 
 }
 
-/* Mobile: Move background image to the left */
+/* Mobile: Adjust background and overlay */
 @media all and (max-width: 768px) {
   .organization .bord-box {
     background-position: left center;
+    background-size: cover;
+  }
+  
+  .organization .item-box {
+    background-color: rgba(0, 0, 0, 0.65); /* Lighter on mobile */
+  }
+  
+  .organization .item-box.bg-img:after {
+    background: rgba(0, 0, 0, 0.65); /* Lighter on mobile */
   }
 }
 /* ======= See You style ======= */
