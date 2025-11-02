@@ -14,7 +14,7 @@ function Where () {
         <div className='row'>
           <div className='col-md-12 mb-30'>
             {' '}
-            <span className='oliven-title-meta'>When & Where</span>
+            <span className='oliven-title-meta'>Location</span>
            
           </div>
         </div>
@@ -33,9 +33,7 @@ function Where () {
               <p>
                 <i className='ti-location-pin'></i>M56Q+6H5, Military Rd, Ammapet, Salem, Tamil Nadu 636003
               </p>
-              <p>
-                <i className='ti-time'></i> <span>12:00am – 13:00pm</span>
-              </p>
+              
             </div>
           </div>
         </div>

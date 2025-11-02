@@ -21,7 +21,6 @@ function App() {
         <Countdown />
         
         <Where />
-        <Seeyou />
          <Footer />
         
       </div>

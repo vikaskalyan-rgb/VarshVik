@@ -37,7 +37,7 @@ function Sidebar () {
               <a href='#story'>Invitation</a>
             </li>
             <li>
-              <a href='#whenwhere'>When & Where</a>
+              <a href='#whenwhere'>Location</a>
             </li>
           </ul>
         </nav>
