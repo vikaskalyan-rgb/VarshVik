@@ -1,10 +1,10 @@
 import React from 'react'
-import ceremony1 from '../assets/images/ceremony 1.jpg'
-import ceremony2 from '../assets/images/ceremony 2.jpg'
-import ceremony3 from '../assets/images/ceremony 3.jpg'
-import ceremony4 from '../assets/images/ceremony 4.jpg'
-import ceremony5 from '../assets/images/ceremony 5.jpg'
-import ceremony6 from '../assets/images/ceremony 6.jpg'
+import ceremony1 from '../assets/images/ceremony 1.png'
+import ceremony2 from '../assets/images/ceremony 2.png'
+import ceremony3 from '../assets/images/ceremony 3.png'
+import ceremony4 from '../assets/images/ceremony 4.png'
+import ceremony5 from '../assets/images/ceremony 5.png'
+import ceremony6 from '../assets/images/ceremony 6.png'
 
 function Organization () {
   const ceremonies = [

@@ -63,7 +63,6 @@ function Countdown () {
       <div className='container'>
         <div className='row'>
           <div className='col-md-12 text-center countdown-header'>
-            <span className='countdown-subtitle'>Save The Date</span>
             <h2 className='countdown-title'>Countdown to Forever</h2>
             <div className='title-divider'>
               <span className='divider-line'></span>
