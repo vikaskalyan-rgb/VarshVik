@@ -30,7 +30,7 @@ function Organization () {
     {
       number: "04",
       title: "THE 'OONJAL' CEREMONY",
-      description: "The bride and the groom sit on the swing. Friends and relatives display their talent in classical music, providing festivity to the atmosphere. The Unjal (swing) signifies the ups and downs of life.",
+      description: "The bride and the groom sit on the swing. Friends and relatives display their talent in classical music, providing festivity to the atmosphere. The oonjal (swing) signifies the ups and downs of life.",
       image: ceremony3
     },
     {
