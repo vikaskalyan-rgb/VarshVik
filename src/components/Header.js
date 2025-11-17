@@ -22,13 +22,13 @@ function Header () {
       startDate = '20260304T180000'; // March 04, 2026, 6:00 PM
       endDate = '20260304T230000';   // March 04, 2026, 11:00 PM
       details = 'Join us for the wedding reception of Varsha and Vikas';
-      location = 'Adithi Hall, NO 2, 1st Main Rd, Kannan Nagar, Madipakkam, Chennai, Tamil Nadu 600091';
+      location = 'Vysya Hall, M56Q+6H5, Military Rd, Ammapet, Salem, Tamil Nadu 636003';
     } else {
       title = 'Varsha & Vikas - Marriage Ceremony';
       startDate = '20260305T110000'; // March 05, 2026, 11:00 AM
       endDate = '20260305T120000';   // March 05, 2026, 12:00 PM
       details = 'Join us for the wedding ceremony of Varsha and Vikas';
-      location = 'Adithi Hall, NO 2, 1st Main Rd, Kannan Nagar, Madipakkam, Chennai, Tamil Nadu 600091';
+      location = 'Vysya Hall, M56Q+6H5, Military Rd, Ammapet, Salem, Tamil Nadu 636003';
     }
 
     // Google Calendar URL
@@ -47,13 +47,13 @@ function Header () {
       startDate = '20260304T180000';
       endDate = '20260304T230000';
       details = 'Join us for the wedding reception of Varsha and Vikas';
-      location = 'Adithi Hall, NO 2, 1st Main Rd, Kannan Nagar, Madipakkam, Chennai, Tamil Nadu 600091';
+      location = 'Vysya Hall, M56Q+6H5, Military Rd, Ammapet, Salem, Tamil Nadu 636003';
     } else {
       title = 'Varsha & Vikas - Marriage Ceremony';
       startDate = '20260305T110000';
       endDate = '20260305T120000';
       details = 'Join us for the wedding ceremony of Varsha and Vikas';
-      location = 'Adithi Hall, NO 2, 1st Main Rd, Kannan Nagar, Madipakkam, Chennai, Tamil Nadu 600091';
+      location = 'Vysya Hall, M56Q+6H5, Military Rd, Ammapet, Salem, Tamil Nadu 636003';
     }
 
     const icsContent = `BEGIN:VCALENDAR

@@ -68,7 +68,7 @@ function Sidebar () {
               <li className='menu-item'>
                 <a href='#whenwhere' onClick={closeMenu}>
                   <span className='menu-icon'><i className='ti-location-pin'></i></span>
-                  <span className='menu-text'>Location</span>
+                  <span className='menu-text'>Wedding Venue</span>
                 </a>
               </li>
             </ul>
