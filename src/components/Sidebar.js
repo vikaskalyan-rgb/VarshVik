@@ -49,25 +49,25 @@ function Sidebar () {
               </li>
               <li className='menu-item'>
                 <a href='#organization' onClick={closeMenu}>
-                  <span className='menu-icon'><i className='ti-crown'></i></span>
+                  <span className='menu-icon'><i className='ti-map'></i></span>
                   <span className='menu-text'>Vivaha Vaibhavam</span>
                 </a>
               </li>
               <li className='menu-item'>
                 <a href='#story' onClick={closeMenu}>
-                  <span className='menu-icon'><i className='ti-heart'></i></span>
+                  <span className='menu-icon'><i className='ti-bookmark-alt'></i></span>
                   <span className='menu-text'>Invitation</span>
                 </a>
               </li>
                <li className='menu-item'>
                 <a href='#gallery' onClick={closeMenu}>
-                  <span className='menu-icon'><i className='ti-location-pin'></i></span>
+                  <span className='menu-icon'><i className='ti-gallery'></i></span>
                   <span className='menu-text'>Engagement Gallery</span>
                 </a>
               </li>
                <li className='menu-item'>
                 <a href='#countdown' onClick={closeMenu}>
-                  <span className='menu-icon'><i className='ti-home'></i></span>
+                  <span className='menu-icon'><i className='ti-alarm-clock'></i></span>
                   <span className='menu-text'>Countdown</span>
                 </a>
               </li>
