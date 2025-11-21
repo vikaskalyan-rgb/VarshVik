@@ -32,9 +32,7 @@ function Where () {
               <span className='divider-icon'>♥</span>
               <span className='divider-line'></span>
             </div>
-            <p className='section-description animate-box' data-animate-effect='fadeInUp'>
-              Join us at this beautiful venue as we begin our forever
-            </p>
+          
           </div>
         </div>
         <div className='row justify-content-center'>

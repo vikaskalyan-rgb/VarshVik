@@ -33,7 +33,7 @@ function Story () {
                 <span className='quote-mark-right'>"</span>
               </div>
 
-              <div className='story-paragraphs'>
+              
                 <p className='story-lead'>
                   <span className='heart-icon'>♥</span> Two people who feel like home to each other.
                 </p>
@@ -49,7 +49,7 @@ function Story () {
                 <p className='story-lead'>
                   <span className='heart-icon'>♥</span> Who are ready to build a lifetime together, heart to heart, soul to soul
                 </p>
-              </div>
+              
 
               <div className='story-divider'>
                 <span className='divider-line-left'></span>

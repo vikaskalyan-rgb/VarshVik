@@ -101,7 +101,7 @@ END:VCALENDAR`;
             <div className='hero-content'>
               {/* Translate Button */}
               <button 
-                className='hero-translate-btn'
+                className='invitation-translate-btn'
                 onClick={() => setIsInvitationTamil(!isInvitationTamil)}
                 title={isInvitationTamil ? 'Switch to English' : 'Switch to Tamil'}
               >
