@@ -262,9 +262,12 @@ button {
     border: 1px solid #BD945A;
     color: #BD945A;
 }
+/* ================================================================
+   COMPLETE LUXURY DARK SIDEBAR CSS - MINIMAL HAMBURGER VERSION
+   Replace your entire sidebar section with this code
+   ================================================================ */
 
-
-/* ===== Beautiful Sidebar Style ===== */
+/* ===== LUXURY DARK SIDEBAR REDESIGN ===== */
 #oliven-aside {
   padding: 0;
   width: 22%;
@@ -272,14 +275,72 @@ button {
   bottom: 0;
   top: 0;
   left: 0;
-  overflow-y: auto;
+  overflow: hidden;
   z-index: 1001;
-  background: linear-gradient(135deg, #fdfbf9 0%, #f8f5f2 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
   scrollbar-width: none;
-  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 0 30px rgba(0, 0, 0, 0.8);
+  border-right: 1px solid rgba(212, 169, 104, 0.2);
+}
+
+/* Elegant Background Overlay with Moving Gradient */
+#oliven-aside::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 40% 30%, rgba(212, 169, 104, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 70%, rgba(189, 148, 90, 0.1) 0%, transparent 50%);
+  animation: gradientMove 15s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Floating Sparkle Particles */
+#oliven-aside::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 20%, rgba(212, 169, 104, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 75% 35%, rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+    radial-gradient(circle at 40% 55%, rgba(212, 169, 104, 0.25) 1px, transparent 1px),
+    radial-gradient(circle at 60% 75%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 50% 90%, rgba(212, 169, 104, 0.22) 1px, transparent 1px);
+  background-size: 180px 180px, 220px 220px, 200px 200px, 240px 240px, 190px 190px;
+  animation: sparkleFloat 20s linear infinite;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+@keyframes sparkleFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
 }
 
 #oliven-aside::-webkit-scrollbar {
@@ -287,16 +348,19 @@ button {
 }
 
 .sidebar-content {
-  padding: 40px 30px;
-  min-height: 100vh;
+  padding: 20px 20px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
-/* Logo section */
+/* Logo section with Glass Effect */
 #oliven-aside .oliven-logo {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   animation: fadeInDown 0.8s ease-out;
 }
 
@@ -317,21 +381,60 @@ button {
 }
 
 .logo-wrapper {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 20px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid #BD945A;
-  padding: 5px;
-  background: #fff;
+  border: 2px solid rgba(212, 169, 104, 0.5);
+  padding: 4px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
   transition: all 0.4s ease;
-  box-shadow: 0 5px 20px rgba(189, 148, 90, 0.2);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(212, 169, 104, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.logo-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #D4A968, #f4d9a8, #D4A968, #f4d9a8);
+  background-size: 300% 300%;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: borderFlow 4s ease infinite;
+  filter: blur(8px);
+}
+
+@keyframes borderFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.logo-wrapper:hover::before {
+  opacity: 1;
 }
 
 .logo-wrapper:hover {
-  transform: scale(1.05) rotate(5deg);
-  box-shadow: 0 8px 30px rgba(189, 148, 90, 0.3);
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.7),
+    0 0 50px rgba(212, 169, 104, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(212, 169, 104, 0.7);
 }
 
 .logo-wrapper img {
@@ -339,47 +442,66 @@ button {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  filter: brightness(1.1);
 }
 
 .couple-names {
   font-family: 'Alex Brush', cursive;
-  font-size: 36px;
-  color: #333;
+  font-size: 28px;
+  background: linear-gradient(135deg, #ffffff 0%, #D4A968 50%, #f4d9a8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   line-height: 1.2;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  background-size: 200% 200%;
+  animation: titleShimmer 3s ease-in-out infinite;
+  text-shadow: 0 2px 15px rgba(212, 169, 104, 0.3);
+}
+
+@keyframes titleShimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .couple-names:hover {
-  color: #BD945A;
+  transform: scale(1.05);
 }
 
 .ampersand {
-  font-size: 24px;
-  color: #BD945A;
-  margin: 0 5px;
+  font-size: 20px;
+  color: #D4A968;
+  margin: 0 3px;
   font-weight: 400;
+  filter: drop-shadow(0 0 8px rgba(212, 169, 104, 0.5));
 }
 
 .date-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px 0;
-  gap: 10px;
+  margin: 6px 0;
+  gap: 8px;
 }
 
 .divider-line {
-  width: 40px;
+  width: 50px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #BD945A, transparent);
+  background: linear-gradient(90deg, transparent, rgba(212, 169, 104, 0.6), transparent);
+  box-shadow: 0 0 8px rgba(212, 169, 104, 0.3);
 }
 
 .divider-heart {
-  color: #BD945A !important;
-  font-size: 14px;
+  color: #D4A968 !important;
+  font-size: 16px;
   animation: heartbeat 1.5s infinite;
+  filter: drop-shadow(0 0 8px rgba(212, 169, 104, 0.6));
 }
 
 @keyframes heartbeat {
@@ -387,24 +509,25 @@ button {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.25);
   }
 }
 
 .wedding-dates {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   margin: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Navigation menu */
+/* Navigation menu with Glass Cards */
 #oliven-aside .oliven-main-menu {
   flex: 1;
-  margin: 30px 0;
+  margin: 15px 0 10px 0;
 }
 
 #oliven-aside .oliven-main-menu ul {
@@ -425,6 +548,8 @@ button {
 .menu-item:nth-child(2) { animation-delay: 0.2s; }
 .menu-item:nth-child(3) { animation-delay: 0.3s; }
 .menu-item:nth-child(4) { animation-delay: 0.4s; }
+.menu-item:nth-child(5) { animation-delay: 0.5s; }
+.menu-item:nth-child(6) { animation-delay: 0.6s; }
 
 @keyframes fadeInLeft {
   from {
@@ -440,17 +565,19 @@ button {
 .menu-item a {
   display: flex;
   align-items: center;
-  padding: 15px 20px;
+  padding: 12px 15px;
   margin-bottom: 5px;
-  color: #555;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 10px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .menu-item a::before {
@@ -460,9 +587,25 @@ button {
   top: 0;
   width: 4px;
   height: 100%;
-  background: #BD945A;
+  background: linear-gradient(180deg, #D4A968, #f4d9a8);
   transform: scaleY(0);
   transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(212, 169, 104, 0.6);
+}
+
+.menu-item a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 169, 104, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.menu-item a:hover::after {
+  left: 100%;
 }
 
 .menu-item a:hover::before,
@@ -471,77 +614,102 @@ button {
 }
 
 .menu-item a:hover {
-  background: rgba(189, 148, 90, 0.1);
-  color: #BD945A;
-  padding-left: 25px;
+  background: rgba(212, 169, 104, 0.15);
+  color: #D4A968;
+  padding-left: 24px;
+  border-color: rgba(212, 169, 104, 0.3);
+  box-shadow: 0 5px 20px rgba(212, 169, 104, 0.2);
+  text-shadow: 0 0 10px rgba(212, 169, 104, 0.5);
+}
+
+.menu-item a.active {
+  background: rgba(212, 169, 104, 0.2);
+  color: #D4A968;
+  border-color: rgba(212, 169, 104, 0.4);
 }
 
 .menu-icon {
-  width: 35px;
+  width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 12px;
-  font-size: 18px;
-  color: #BD945A;
+  margin-right: 10px;
+  font-size: 16px;
+  color: #D4A968;
+  filter: drop-shadow(0 0 6px rgba(212, 169, 104, 0.4));
 }
 
 .menu-text {
   letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Footer section */
+/* Footer section with Glass Effect */
 #oliven-aside .footer1 {
   text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(189, 148, 90, 0.2);
+  padding-top: 15px;
+  border-top: 1px solid rgba(212, 169, 104, 0.2);
   margin-top: auto;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
 }
 
 #oliven-aside .separator {
   width: 60px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #BD945A, transparent);
+  background: linear-gradient(90deg, transparent, rgba(212, 169, 104, 0.6), transparent);
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto 12px;
+  box-shadow: 0 0 8px rgba(212, 169, 104, 0.3);
 }
 
 .footer-text {
-  font-size: 13px;
-  color: #888;
-  line-height: 1.8;
-  margin-bottom: 15px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .footer-text strong {
-  color: #333;
+  color: #D4A968;
   font-weight: 600;
+  text-shadow: 0 0 10px rgba(212, 169, 104, 0.5);
 }
 
 .footer-date {
-  color: #BD945A;
+  color: #D4A968;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 1px;
+  filter: drop-shadow(0 0 8px rgba(212, 169, 104, 0.5));
 }
 
 .footer-heart {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .footer-heart i {
-  color: #BD945A !important;
-  font-size: 20px;
+  color: #D4A968 !important;
+  font-size: 18px;
   animation: pulse 2s infinite;
+  filter: drop-shadow(0 0 10px rgba(212, 169, 104, 0.6));
 }
 
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.7;
+    opacity: 0.8;
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.3);
     opacity: 1;
   }
 }
@@ -549,7 +717,6 @@ button {
 .sidebar-overlay {
   display: none;
 }
-
 
 /* ===== Main Content Layout ===== */
 #oliven-main {
@@ -574,162 +741,168 @@ button {
   padding: 0 15px;
 }
 
-
-/* ===== Navigation styles ===== */
+/* ===== MINIMAL ELEGANT HAMBURGER - NO BOX ===== */
 .oliven-nav-toggle {
-    position: fixed;
-    left: 15px; /* Keep it left */
-    top: 15px; /* Keep it top */
-    z-index: 9999;
-    cursor: pointer;
-    opacity: 1;
-    visibility: hidden;
-    padding: 12px 15px;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-    background: transparent;
-    margin: 0; /* CHANGED - removed margin */
-    border-radius: 0;
-    box-shadow: none;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 9999;
+  cursor: pointer;
+  opacity: 1;
+  visibility: hidden;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
-.oliven-nav-toggle.active i::before,
-.oliven-nav-toggle.active i::after {
-    background: #fff;
+
+.oliven-nav-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 169, 104, 0.15), rgba(189, 148, 90, 0.1));
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.oliven-nav-toggle.dark.active i::before,
-.oliven-nav-toggle.dark.active i::after {
-    background: #000;
+
+.oliven-nav-toggle:hover::before {
+  opacity: 1;
 }
+
 .oliven-nav-toggle:hover,
 .oliven-nav-toggle:focus,
 .oliven-nav-toggle:active {
-    outline: none;
-    border-bottom: none !important;
+  outline: none;
 }
+
 .oliven-nav-toggle i {
-    position: relative;
-    display: -moz-inline-stack;
-    display: inline-block;
-    zoom: 1;
-    width: 19px;
-    height: 1px;
-    color: #fff;
-    font: bold 14px/.4 Helvetica;
-    text-transform: uppercase;
-    text-indent: -55px;
-    background: #fff;
-    -webkit-transition: all .2s ease-out;
-    -o-transition: all .2s ease-out;
-    transition: all .2s ease-out;
-    top: -4px;
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #D4A968;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(212, 169, 104, 0.4);
+  top: 0;
+  text-indent: -9999px;
+  font-size: 0;
 }
+
 .oliven-nav-toggle i::before,
 .oliven-nav-toggle i::after {
-    content: '';
-    width: 20px;
-    height: 1px;
-    background: #fff;
-    position: absolute;
-    left: 0;
-    -webkit-transition: 0.2s;
-    -o-transition: 0.2s;
-    transition: 0.2s;
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 26px;
+  height: 2px;
+  background: #D4A968;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(212, 169, 104, 0.4);
 }
-.oliven-nav-toggle.dark i {
-    position: relative;
-    color: #000;
-    background: #000;
-    -webkit-transition: all .2s ease-out;
-    -o-transition: all .2s ease-out;
-    transition: all .2s ease-out;
+
+.oliven-nav-toggle i::before {
+  top: -8px;
 }
+
+.oliven-nav-toggle i::after {
+  bottom: -8px;
+}
+
+.oliven-nav-toggle:hover i {
+  background: #e8c589;
+  box-shadow: 0 0 15px rgba(232, 197, 137, 0.6);
+}
+
+.oliven-nav-toggle:hover i::before {
+  background: #e8c589;
+  box-shadow: 0 0 15px rgba(232, 197, 137, 0.6);
+  top: -9px;
+}
+
+.oliven-nav-toggle:hover i::after {
+  background: #e8c589;
+  box-shadow: 0 0 15px rgba(232, 197, 137, 0.6);
+  bottom: -9px;
+}
+
+.oliven-nav-toggle.active::before {
+  opacity: 1;
+}
+
+.oliven-nav-toggle.active i {
+  background: transparent;
+  box-shadow: none;
+}
+
+.oliven-nav-toggle.active i::before {
+  top: 0;
+  transform: rotate(45deg);
+  background: #e8c589;
+  box-shadow: 0 0 15px rgba(232, 197, 137, 0.8);
+}
+
+.oliven-nav-toggle.active i::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+  background: #e8c589;
+  box-shadow: 0 0 15px rgba(232, 197, 137, 0.8);
+}
+
+.oliven-nav-toggle.dark i,
 .oliven-nav-toggle.dark i::before,
 .oliven-nav-toggle.dark i::after {
-    background: #000;
-    -webkit-transition: 0.2s;
-    -o-transition: 0.2s;
-    transition: 0.2s;
+  background: #D4A968;
 }
-.oliven-nav-toggle i::before {
-    top: -7px;
-}
-.oliven-nav-toggle i::after {
-    bottom: -7px;
-}
-.oliven-nav-toggle:hover i::before {
-    top: -10px;
-}
-.oliven-nav-toggle:hover i::after {
-    bottom: -10px;
-}
-.oliven-nav-toggle.active i {
-    background: transparent;
-}
-.oliven-nav-toggle.active i::before {
-    top: 0;
-    -webkit-transform: rotateZ(45deg);
-    -moz-transform: rotateZ(45deg);
-    -ms-transform: rotateZ(45deg);
-    -o-transform: rotateZ(45deg);
-    transform: rotateZ(45deg);
-}
-.oliven-nav-toggle.active i::after {
-    bottom: 0;
-    -webkit-transform: rotateZ(-45deg);
-    -moz-transform: rotateZ(-45deg);
-    -ms-transform: rotateZ(-45deg);
-    -o-transform: rotateZ(-45deg);
-    transform: rotateZ(-45deg);
-}
-.oliven-nav-toggle {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    z-index: 9999;
-    cursor: pointer;
-    opacity: 1;
-    visibility: hidden;
-    padding: 12px 15px;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-    background: #BD945A;
-    margin: 15px 30px;
-    border-radius: 50%;
-}
+
+/* ===== MOBILE ===== */
 @media screen and (max-width: 768px) {
-    .oliven-nav-toggle {
-        opacity: 1;
-        visibility: visible;
-        left: 15px; /* Fixed position */
-        top: 15px;
-    }
-}
-body.slide {
-    overflow: hidden !important;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-}
- body.slide #oliven-aside {
-    -moz-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
-    z-index: 1000;
-    overflow-y: auto !important; /* KEEP SCROLLABLE WHEN OPEN */
-    -webkit-overflow-scrolling: touch;
+  .oliven-nav-toggle {
+    opacity: 1;
+    visibility: visible;
+    left: 15px;
+    top: 15px;
   }
-body.slide #oliven-main,
-body.slide .oliven-nav-toggle {
-    top: 0;
-    -moz-transform: translateX(280px);
-    -webkit-transform: translateX(280px);
-    -ms-transform: translateX(280px);
-    -o-transform: translateX(280px);
-    transform: translateX(280px);
+  
+  #oliven-aside {
+    width: 100%;
+    left: -100%;
+    transform: translateX(-100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+  }
+  
+  .sidebar-content {
+    padding: 15px;
+    height: 100vh;
+  }
+  
+  .logo-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .couple-names {
+    font-size: 24px;
+  }
+  
+  .menu-item a {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+body.slide #oliven-aside {
+  transform: translateX(0);
+  left: 0 !important;
 }
 /* ======= Stunning Header Style - LUXURY DARK REDESIGN ======= */
 .header {
@@ -2570,8 +2743,8 @@ body.slide .oliven-nav-toggle {
 
 .invitation-translate-btn {
   position: absolute;
-  top: -20px;
-  right: 20px;
+  top: 25px;  /* CHANGED from 20px or whatever it was - moved down */
+  right: 25px; /* CHANGED from 20px - moved right */
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -2601,7 +2774,6 @@ body.slide .oliven-nav-toggle {
     0 6px 25px rgba(212, 169, 104, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
-
 .invitation-heading {
   font-family: 'Cormorant Garamond', serif;
   font-size: 30px;
@@ -3013,6 +3185,7 @@ body.slide .oliven-nav-toggle {
 
 .invitation-translate-btn:active {
   transform: translateY(-2px) scale(1.1);
+  
 }
 
 /* Title */
@@ -3125,11 +3298,15 @@ body.slide .oliven-nav-toggle {
     font-size: 15px;
   }
   
+ @media screen and (max-width: 768px) {
   .invitation-translate-btn {
-    width: 46px;
-    height: 46px;
-    font-size: 18px;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
   }
+}
 }
 
 @media screen and (max-width: 480px) {
@@ -3155,6 +3332,8 @@ body.slide .oliven-nav-toggle {
   
   .invitation-translate-btn {
     width: 44px;
+    top: -10px;
+    left: -5px;
     height: 44px;
     font-size: 17px;
   }
@@ -4240,180 +4419,6 @@ body.slide .oliven-nav-toggle {
   #oliven-main {
     width: 100%;
     margin-left: 0;
-  }
-  
-  /* Sidebar Mobile - FULL SCREEN */
-  #oliven-aside {
-    width: 100%; /* CHANGED from 320px to 100% */
-    max-width: 100%; /* CHANGED from 320px to 100% */
-    height: 100vh;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    -o-transform: translateX(-100%);
-    transform: translateX(-100%);
-    background: linear-gradient(135deg, #fdfbf9 0%, #f8f5f2 100%);
-    padding-bottom: 0;
-  }
-  
-  body.slide #oliven-aside {
-    -moz-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
-    z-index: 1000;
-  }
-  
-  .sidebar-content {
-    padding: 30px 20px 40px; 
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .logo-wrapper {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 20px;
-  }
-  
-  .couple-names {
-    font-size: 32px;
-    margin-bottom: 12px;
-  }
-  
-  .ampersand {
-    font-size: 20px;
-  }
-  
-  .wedding-dates {
-    font-size: 12px;
-    margin-bottom: 30px;
-  }
-  
-  .date-divider {
-    margin: 15px 0;
-  }
-  
-  .divider-heart {
-    color: #BD945A !important;
-  }
-  
-  #oliven-aside .oliven-main-menu {
-    flex: 1;
-    margin: 20px 0;
-  }
-  
-  #oliven-aside .oliven-main-menu ul {
-    text-align: left;
-  }
-  
-  .menu-item {
-    margin-bottom: 5px;
-  }
-  
-  .menu-item a {
-    font-size: 17px;
-    padding: 14px 18px;
-  }
-  
-  .menu-icon {
-    width: 32px;
-    font-size: 17px;
-  }
-  
-  #oliven-aside .footer1 {
-    padding-top: 30px;
-    margin-top: auto;
-    border-top: 1px solid rgba(189, 148, 90, 0.2);
-    padding-bottom: 40px;
-  }
-  
-  .footer-text {
-    font-size: 13px;
-    line-height: 1.6;
-  }
-  
-  .footer-text strong {
-    font-size: 14px;
-  }
-  
-  .footer-heart i {
-    color: #BD945A !important;
-  }
-  
-  #oliven-aside::-webkit-scrollbar {
-    width: 6px !important;
-  }
-  
-  #oliven-aside::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  #oliven-aside::-webkit-scrollbar-thumb {
-    background: rgba(189, 148, 90, 0.3);
-    border-radius: 10px;
-  }
-  
-  #oliven-aside::-webkit-scrollbar-thumb:hover {
-    background: rgba(189, 148, 90, 0.5);
-  }
-  
-  /* OVERLAY - NO LONGER NEEDED BUT KEPT FOR BACKUP */
-  .sidebar-overlay {
-    display: none !important; /* DISABLED - not needed for fullscreen */
-  }
-  
-  .oliven-nav-toggle {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    z-index: 9999;
-    cursor: pointer;
-    opacity: 1;
-    visibility: visible;
-    padding: 12px 15px;
-    margin: 15px;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    transition: all 0.3s ease;
-  }
-  
-  .oliven-nav-toggle:hover {
-    transform: scale(1.1);
-  }
-  
-  .oliven-nav-toggle i {
-    background: #BD945A;
-    height: 2px;
-  }
-  
-  .oliven-nav-toggle i::before,
-  .oliven-nav-toggle i::after {
-    background: #BD945A;
-    height: 2px;
-  }
-  
-  .oliven-nav-toggle.active i {
-    background: transparent;
-  }
-  
-  .oliven-nav-toggle.active i::before {
-    top: 0;
-    -webkit-transform: rotateZ(45deg);
-    transform: rotateZ(45deg);
-    background: #BD945A;
-  }
-  
-  .oliven-nav-toggle.active i::after {
-    bottom: 0;
-    -webkit-transform: rotateZ(-45deg);
-    transform: rotateZ(-45deg);
-    background: #BD945A;
   }
   
   /* Header Mobile */
