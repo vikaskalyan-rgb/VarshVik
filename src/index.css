@@ -2743,7 +2743,7 @@ body.slide #oliven-aside {
 
 .invitation-translate-btn {
   position: absolute;
-  top: 25px;  /* CHANGED from 20px or whatever it was - moved down */
+  top: -40px;  /* CHANGED from 20px or whatever it was - moved down */
   right: 25px; /* CHANGED from 20px - moved right */
   width: 42px;
   height: 42px;
