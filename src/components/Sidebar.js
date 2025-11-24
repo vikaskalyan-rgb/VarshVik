@@ -29,7 +29,7 @@ function Sidebar () {
                 <img src={Logo} alt='Wedding Logo' />
               </div>
               <span className='couple-names'>
-                Varsha <small className='ampersand'>&</small> Vikas
+                Varsha&nbsp;&nbsp;&&nbsp;&nbsp;Vikas
               </span>
               <div className='date-divider'>
                 <span className='divider-line'></span>

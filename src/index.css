@@ -8334,3 +8334,2313 @@ body.light-theme .music-control.playing::before {
     height: 18px;
   }
 }
+/* ===== THEME TOGGLE BUTTON - Positioned next to Om Symbol ===== */
+.sacred-chant {
+  position: relative;
+  display: inline-block;
+}
+
+.theme-toggle-btn {
+  position: absolute;
+  top: 50%;
+  left: auto;
+  right: -70px;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(189, 148, 90, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(189, 148, 90, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.theme-toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(189, 148, 90, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-toggle-btn:hover::before {
+  opacity: 1;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(189, 148, 90, 0.25);
+  border-color: #BD945A;
+  transform: translateY(-50%) scale(1.12) rotate(180deg);
+  box-shadow: 
+    0 12px 35px rgba(189, 148, 90, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle-btn:active {
+  transform: translateY(-50%) scale(1);
+}
+
+.sun-icon,
+.moon-icon {
+  position: absolute;
+  font-size: 26px;
+  line-height: 1;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 2px 8px rgba(189, 148, 90, 0.5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sun-icon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0);
+}
+
+.moon-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Light Theme - Show sun, hide moon */
+body.light-theme .sun-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+body.light-theme .moon-icon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .theme-toggle-btn {
+    right: -60px;
+    left: auto;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .sun-icon,
+  .moon-icon {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .theme-toggle-btn {
+    right: -55px;
+    left: auto;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .sun-icon,
+  .moon-icon {
+    font-size: 20px;
+  }
+}
+
+/* ===== LIGHT THEME STYLES - BEIGE & PEACOCK BLUE ===== */
+
+/* Define Light Theme Color Variables */
+body.light-theme {
+  --peacock-blue: #006B7D;
+  --peacock-light: #008FA3;
+  --peacock-dark: #004D5C;
+  --green-primary: #2D5016;
+  --green-light: #3A6B1E;
+  --green-dark: #1F3A0F;
+  --white-primary: #FFFFFF;
+  --white-secondary: #F8F9FA;
+  --gold-accent: #B8860B;
+  --text-dark: #2C3E50;
+  --text-light: #5D6D7E;
+}
+
+/* ===== LIGHT THEME: BACKGROUNDS ===== */
+body.light-theme .header,
+body.light-theme .countdown-section,
+body.light-theme .story,
+body.light-theme .organization,
+body.light-theme .whenwhere,
+body.light-theme .engagement-gallery {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E8F5E9 30%, #FFFFFF 70%, #E0F2E3 100%);
+}
+
+/* Overlay adjustments for light theme */
+body.light-theme .hero-overlay,
+body.light-theme .countdown-section::before,
+body.light-theme .story::before,
+body.light-theme .organization::before,
+body.light-theme .whenwhere::before,
+body.light-theme .engagement-gallery::before {
+  background: 
+    radial-gradient(ellipse at 30% 25%, rgba(45, 80, 22, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 75%, rgba(45, 80, 22, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.5) 0%, transparent 50%);
+}
+
+/* Sparkle particles for light theme */
+body.light-theme .hero-overlay::after,
+body.light-theme .countdown-section::after,
+body.light-theme .story::after,
+body.light-theme .organization::after,
+body.light-theme .whenwhere::after,
+body.light-theme .engagement-gallery::after {
+  background-image: 
+    radial-gradient(circle at 20% 25%, rgba(45, 80, 22, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 80% 30%, rgba(58, 107, 30, 0.25) 1px, transparent 1px),
+    radial-gradient(circle at 40% 60%, rgba(45, 80, 22, 0.28) 1px, transparent 1px),
+    radial-gradient(circle at 65% 70%, rgba(58, 107, 30, 0.22) 1px, transparent 1px),
+    radial-gradient(circle at 50% 45%, rgba(45, 80, 22, 0.25) 1px, transparent 1px),
+    radial-gradient(circle at 30% 85%, rgba(58, 107, 30, 0.3) 1px, transparent 1px);
+  opacity: 0.5;
+}
+
+/* ===== LIGHT THEME: HERO SECTION ===== */
+body.light-theme .hero-content {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(45, 80, 22, 0.25);
+  box-shadow: 
+    0 20px 60px rgba(45, 80, 22, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+body.light-theme .hero-content:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(45, 80, 22, 0.4);
+  box-shadow: 
+    0 30px 80px rgba(45, 80, 22, 0.25),
+    0 15px 40px rgba(45, 80, 22, 0.15),
+    inset 0 2px 0 rgba(255, 255, 255, 1);
+}
+
+/* Diagonal reflection for light theme */
+body.light-theme .hero-content::before {
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(45, 80, 22, 0.12) 48%,
+    rgba(45, 80, 22, 0.25) 50%,
+    rgba(45, 80, 22, 0.12) 52%,
+    transparent 60%,
+    transparent 100%
+  );
+}
+
+/* Shimmer effect for light theme */
+body.light-theme .hero-content::after {
+  background: linear-gradient(
+    135deg,
+    rgba(45, 80, 22, 0.1) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(45, 80, 22, 0.1) 100%
+  );
+}
+
+/* ===== LIGHT THEME: TEXT COLORS - PEACOCK BLUE ===== */
+body.light-theme .name-text,
+body.light-theme .hero-names,
+body.light-theme .section-title,
+body.light-theme .countdown-title,
+body.light-theme .celebration-title {
+  background: linear-gradient(135deg, var(--peacock-blue) 0%, var(--peacock-light) 50%, var(--peacock-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+body.light-theme .parent-names,
+body.light-theme .hero-subtitle,
+body.light-theme .countdown-message,
+body.light-theme .section-description,
+body.light-theme .story-line,
+body.light-theme .venue-address,
+body.light-theme .invitation-paragraph,
+body.light-theme .ceremony-description {
+  color: var(--peacock-dark);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .parent-label,
+body.light-theme .section-subtitle,
+body.light-theme .countdown-subtitle,
+body.light-theme .gallery-subtitle {
+  color: var(--peacock-blue);
+  text-shadow: 0 0 15px rgba(0, 107, 125, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+body.light-theme .ampersand-large,
+body.light-theme .om-symbol,
+body.light-theme .divider-heart,
+body.light-theme .divider-icon {
+  color: var(--green-primary) !important;
+  filter: drop-shadow(0 0 10px rgba(45, 80, 22, 0.3));
+}
+
+/* ===== LIGHT THEME: EVENT CARDS ===== */
+body.light-theme .event-card-inner {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(232, 245, 233, 0.8) 100%);
+  border: 2px solid rgba(45, 80, 22, 0.25);
+  box-shadow: 0 15px 40px rgba(45, 80, 22, 0.15);
+}
+
+body.light-theme .event-card:hover .event-card-inner {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(232, 245, 233, 0.95) 100%);
+  border-color: var(--green-primary);
+  box-shadow: 0 25px 60px rgba(45, 80, 22, 0.25);
+}
+
+body.light-theme .event-card-inner::before {
+  background: linear-gradient(90deg, transparent, rgba(45, 80, 22, 0.1), transparent);
+}
+
+body.light-theme .event-title {
+  color: var(--peacock-blue);
+  text-shadow: 0 1px 3px rgba(0, 107, 125, 0.2);
+}
+
+body.light-theme .event-date,
+body.light-theme .event-time {
+  color: var(--peacock-dark);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .calendar-icon-badge {
+  background: rgba(45, 80, 22, 0.12);
+}
+
+body.light-theme .calendar-icon-badge i {
+  color: var(--green-primary);
+}
+
+body.light-theme .add-calendar-hint {
+  color: var(--peacock-blue);
+}
+
+/* ===== LIGHT THEME: COUNTDOWN ===== */
+body.light-theme .countdown-box {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(45, 80, 22, 0.25);
+  box-shadow: 
+    0 15px 50px rgba(45, 80, 22, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+body.light-theme .countdown-box::before {
+  background: linear-gradient(45deg, var(--green-primary), var(--green-light), var(--green-primary), var(--green-light));
+}
+
+body.light-theme .countdown-box:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 25px 70px rgba(45, 80, 22, 0.25),
+    0 15px 40px rgba(45, 80, 22, 0.15),
+    inset 0 2px 0 rgba(255, 255, 255, 1);
+  border-color: var(--green-primary);
+}
+
+body.light-theme .countdown-number {
+  background: linear-gradient(180deg, var(--peacock-blue) 0%, var(--peacock-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+body.light-theme .countdown-label {
+  color: var(--peacock-dark);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .separator-dot {
+  color: var(--green-primary);
+  filter: drop-shadow(0 0 8px rgba(45, 80, 22, 0.4));
+}
+
+/* ===== LIGHT THEME: STORY SECTION ===== */
+body.light-theme .story-image-container,
+body.light-theme .slider-image-wrapper,
+body.light-theme .ceremony-image-wrapper {
+  border: 3px solid rgba(45, 80, 22, 0.25);
+  box-shadow: 
+    0 20px 60px rgba(45, 80, 22, 0.2),
+    0 0 30px rgba(45, 80, 22, 0.1);
+}
+
+body.light-theme .story-image-container::before,
+body.light-theme .slider-image-wrapper::before,
+body.light-theme .ceremony-image-wrapper::before {
+  background: linear-gradient(45deg, var(--green-primary), var(--green-light), var(--green-primary), var(--green-light));
+}
+
+body.light-theme .story-image-container:hover,
+body.light-theme .slider-image-wrapper:hover,
+body.light-theme .ceremony-image-wrapper:hover {
+  border-color: var(--green-primary);
+  box-shadow: 
+    0 30px 80px rgba(45, 80, 22, 0.3),
+    0 0 50px rgba(45, 80, 22, 0.2);
+}
+
+body.light-theme .story-quote-section {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(45, 80, 22, 0.15);
+}
+
+body.light-theme .story-quote-section:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(45, 80, 22, 0.3);
+  box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
+}
+
+body.light-theme .story-quote-text {
+  color: var(--peacock-blue);
+  text-shadow: 0 2px 10px rgba(0, 107, 125, 0.15);
+}
+
+body.light-theme .story-quote-section:hover .story-quote-text {
+  color: var(--peacock-dark);
+  text-shadow: 0 4px 15px rgba(0, 107, 125, 0.2);
+}
+
+body.light-theme .quote-mark-left,
+body.light-theme .quote-mark-right {
+  color: rgba(45, 80, 22, 0.2);
+  filter: drop-shadow(0 0 8px rgba(45, 80, 22, 0.15));
+}
+
+body.light-theme .story-paragraphs {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 40px rgba(45, 80, 22, 0.1);
+}
+
+body.light-theme .story-lead {
+  color: var(--peacock-blue);
+  border-left-color: var(--green-primary);
+  text-shadow: 0 2px 8px rgba(0, 107, 125, 0.1);
+}
+
+body.light-theme .story-lead:hover {
+  color: var(--peacock-dark);
+}
+
+body.light-theme .invitation-section {
+  background: rgba(255, 255, 255, 0.85);
+  border-left-color: var(--green-primary);
+  box-shadow: 
+    0 15px 50px rgba(45, 80, 22, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border: 2px solid rgba(45, 80, 22, 0.2);
+}
+
+body.light-theme .invitation-section:hover {
+  background: rgba(255, 255, 255, 1);
+  border-left-color: var(--green-dark);
+  border-color: rgba(45, 80, 22, 0.35);
+  box-shadow: 
+    0 25px 70px rgba(45, 80, 22, 0.25),
+    0 10px 40px rgba(45, 80, 22, 0.15);
+}
+
+body.light-theme .invitation-heading {
+  color: var(--peacock-blue);
+  text-shadow: 0 2px 12px rgba(0, 107, 125, 0.15);
+}
+
+body.light-theme .invitation-section:hover .invitation-heading {
+  color: var(--peacock-dark);
+}
+
+body.light-theme .invitation-paragraph {
+  color: var(--peacock-dark);
+}
+
+/* ===== LIGHT THEME: CEREMONIES ===== */
+body.light-theme .ceremony-item {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 15px 50px rgba(45, 80, 22, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border: 2px solid rgba(45, 80, 22, 0.2);
+}
+
+body.light-theme .ceremony-item:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 25px 70px rgba(45, 80, 22, 0.25),
+    0 15px 40px rgba(45, 80, 22, 0.15);
+  border-color: rgba(45, 80, 22, 0.35);
+}
+
+body.light-theme .ceremony-number,
+body.light-theme .ceremony-title {
+  color: var(--peacock-blue);
+  text-shadow: 0 2px 8px rgba(0, 107, 125, 0.15);
+}
+
+body.light-theme .ceremony-item:hover .ceremony-number,
+body.light-theme .ceremony-item:hover .ceremony-title {
+  color: var(--peacock-dark);
+}
+
+body.light-theme .title-underline {
+  background: linear-gradient(90deg, var(--green-primary), var(--green-light));
+  box-shadow: 0 0 10px rgba(45, 80, 22, 0.2);
+}
+
+body.light-theme .ceremony-description {
+  color: var(--peacock-dark);
+}
+
+/* ===== LIGHT THEME: LOCATION ===== */
+body.light-theme .location-card {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 20px 60px rgba(45, 80, 22, 0.2),
+    0 0 30px rgba(45, 80, 22, 0.1);
+  border: 2px solid rgba(45, 80, 22, 0.25);
+}
+
+body.light-theme .location-card::before {
+  background: linear-gradient(45deg, var(--green-primary), var(--green-light), var(--green-primary), var(--green-light));
+}
+
+body.light-theme .location-card:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 30px 80px rgba(45, 80, 22, 0.3),
+    0 15px 50px rgba(45, 80, 22, 0.2);
+  border-color: var(--green-primary);
+}
+
+body.light-theme .venue-name {
+  color: var(--peacock-blue);
+  text-shadow: 0 2px 12px rgba(0, 107, 125, 0.15);
+}
+
+body.light-theme .location-card:hover .venue-name {
+  color: var(--peacock-dark);
+}
+
+body.light-theme .address-section {
+  background: rgba(45, 80, 22, 0.06);
+  border-left-color: var(--green-primary);
+  border: 1px solid rgba(45, 80, 22, 0.15);
+}
+
+body.light-theme .address-section:hover {
+  background: rgba(45, 80, 22, 0.1);
+  border-color: rgba(45, 80, 22, 0.25);
+  box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
+}
+
+body.light-theme .address-icon {
+  background: linear-gradient(135deg, var(--green-primary), var(--green-light));
+  box-shadow: 0 5px 20px rgba(45, 80, 22, 0.3);
+}
+
+body.light-theme .logo-circle {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(248, 249, 250, 0.8));
+  border-color: var(--green-primary);
+  box-shadow: 
+    0 15px 50px rgba(45, 80, 22, 0.2),
+    0 0 25px rgba(45, 80, 22, 0.1);
+}
+
+body.light-theme .location-card:hover .logo-circle {
+  border-color: var(--green-dark);
+  box-shadow: 
+    0 20px 60px rgba(45, 80, 22, 0.3),
+    0 0 40px rgba(45, 80, 22, 0.15);
+}
+
+/* ===== LIGHT THEME: BUTTONS ===== */
+body.light-theme .hero-btn.btn-primary,
+body.light-theme .location-btn,
+body.light-theme .rsvp-submit-btn {
+  background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-light) 100%);
+  box-shadow: 0 10px 30px rgba(45, 80, 22, 0.3);
+}
+
+body.light-theme .hero-btn.btn-primary:hover,
+body.light-theme .location-btn:hover,
+body.light-theme .rsvp-submit-btn:hover {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-primary) 100%);
+  box-shadow: 0 15px 50px rgba(45, 80, 22, 0.5);
+}
+
+body.light-theme .btn-secondary {
+  border-color: var(--green-primary);
+  color: var(--green-primary);
+}
+
+body.light-theme .btn-secondary:hover {
+  background: rgba(45, 80, 22, 0.15);
+  box-shadow: 0 15px 40px rgba(45, 80, 22, 0.3);
+}
+
+/* ===== LIGHT THEME: DIVIDERS ===== */
+body.light-theme .divider-line,
+body.light-theme .divider-line-left,
+body.light-theme .divider-line-right {
+  background: linear-gradient(90deg, transparent, rgba(45, 80, 22, 0.5), transparent);
+  box-shadow: 0 0 8px rgba(45, 80, 22, 0.25);
+}
+
+/* ===== LIGHT THEME: FLOATING ELEMENTS ===== */
+body.light-theme .floating-heart,
+body.light-theme .floating-element {
+  color: var(--peacock-blue);
+  opacity: 0.12;
+  filter: drop-shadow(0 0 8px rgba(0, 107, 125, 0.2));
+}
+
+/* ===== LIGHT THEME: GALLERY ===== */
+body.light-theme .overlay-icon {
+  background: linear-gradient(135deg, var(--peacock-blue), var(--gold-accent));
+  box-shadow: 
+    0 10px 30px rgba(0, 107, 125, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+body.light-theme .nav-button {
+  background: rgba(0, 107, 125, 0.15);
+  border-color: rgba(0, 107, 125, 0.4);
+  color: var(--peacock-blue);
+  box-shadow: 
+    0 10px 30px rgba(0, 107, 125, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+body.light-theme .nav-button:hover {
+  background: linear-gradient(135deg, var(--peacock-blue), var(--gold-accent));
+  border-color: var(--peacock-blue);
+  box-shadow: 
+    0 15px 40px rgba(0, 107, 125, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* ===== LIGHT THEME: THEME TOGGLE BUTTON ===== */
+body.light-theme .theme-toggle-btn {
+  background: linear-gradient(135deg, rgba(0, 107, 125, 0.85), rgba(0, 80, 95, 0.9));
+  border-color: var(--peacock-blue);
+  box-shadow: 
+    0 8px 25px rgba(0, 107, 125, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+body.light-theme .theme-toggle-btn::before {
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+}
+
+body.light-theme .theme-toggle-btn:hover {
+  background: linear-gradient(135deg, var(--peacock-blue), var(--peacock-dark));
+  border-color: var(--peacock-dark);
+  box-shadow: 
+    0 12px 35px rgba(0, 107, 125, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+body.light-theme .sun-icon {
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 1)) drop-shadow(0 0 15px rgba(255, 165, 0, 0.8));
+  font-size: 28px;
+}
+
+body.light-theme .moon-icon {
+  filter: drop-shadow(0 2px 8px rgba(0, 107, 125, 0.5));
+}
+body.light-theme .invitation-translate-btn,
+body.light-theme .hero-translate-btn {
+  background: rgba(0, 107, 125, 0.12);
+  border-color: rgba(0, 107, 125, 0.35);
+  color: var(--peacock-blue);
+  box-shadow: 0 4px 15px rgba(0, 107, 125, 0.2);
+}
+
+body.light-theme .invitation-translate-btn:hover,
+body.light-theme .hero-translate-btn:hover {
+  background: linear-gradient(135deg, var(--peacock-blue), var(--gold-accent));
+  border-color: var(--peacock-blue);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 107, 125, 0.4);
+}
+
+/* ===== LIGHT THEME: MUSIC CONTROL ===== */
+body.light-theme .music-control {
+  background: linear-gradient(135deg, var(--peacock-blue), var(--gold-accent));
+  box-shadow: 0 8px 25px rgba(0, 107, 125, 0.3);
+}
+
+body.light-theme .music-control:active {
+  box-shadow: 0 4px 15px rgba(0, 107, 125, 0.5);
+}
+
+body.light-theme .music-control.paused {
+  background: linear-gradient(135deg, var(--text-light), var(--text-dark));
+}
+
+/* ===== LIGHT THEME: SIDEBAR ===== */
+body.light-theme #oliven-aside {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F1F8F4 100%);
+  box-shadow: 2px 0 30px rgba(45, 80, 22, 0.15);
+  border-right: 1px solid rgba(45, 80, 22, 0.2);
+}
+
+body.light-theme #oliven-aside::before {
+  background: 
+    radial-gradient(ellipse at 40% 30%, rgba(45, 80, 22, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 70%, rgba(45, 80, 22, 0.04) 0%, transparent 50%);
+}
+
+body.light-theme #oliven-aside::after {
+  background-image: 
+    radial-gradient(circle at 25% 20%, rgba(45, 80, 22, 0.25) 1px, transparent 1px),
+    radial-gradient(circle at 75% 35%, rgba(58, 107, 30, 0.2) 1px, transparent 1px),
+    radial-gradient(circle at 40% 55%, rgba(45, 80, 22, 0.22) 1px, transparent 1px),
+    radial-gradient(circle at 60% 75%, rgba(58, 107, 30, 0.18) 1px, transparent 1px),
+    radial-gradient(circle at 50% 90%, rgba(45, 80, 22, 0.2) 1px, transparent 1px);
+  opacity: 0.4;
+}
+
+body.light-theme .logo-wrapper {
+  border-color: var(--green-primary);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(241, 248, 244, 0.8));
+  box-shadow: 
+    0 8px 25px rgba(45, 80, 22, 0.15),
+    0 0 20px rgba(45, 80, 22, 0.1);
+}
+
+body.light-theme .logo-wrapper::before {
+  background: linear-gradient(45deg, var(--green-primary), var(--green-light), var(--green-primary), var(--green-light));
+}
+
+body.light-theme .logo-wrapper:hover {
+  border-color: var(--green-dark);
+  box-shadow: 
+    0 12px 35px rgba(45, 80, 22, 0.25),
+    0 0 35px rgba(45, 80, 22, 0.15);
+}
+
+body.light-theme .couple-names {
+  background: linear-gradient(135deg, var(--peacock-blue) 0%, var(--peacock-light) 50%, var(--peacock-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+body.light-theme .wedding-dates {
+  color: var(--peacock-dark);
+}
+
+body.light-theme .menu-item a {
+  color: var(--peacock-dark);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(45, 80, 22, 0.12);
+}
+
+body.light-theme .menu-item a::before {
+  background: linear-gradient(180deg, var(--green-primary), var(--green-light));
+  box-shadow: 0 0 8px rgba(45, 80, 22, 0.4);
+}
+
+body.light-theme .menu-item a:hover {
+  background: rgba(241, 248, 244, 0.9);
+  color: var(--peacock-blue);
+  border-color: rgba(45, 80, 22, 0.2);
+  box-shadow: 0 5px 20px rgba(45, 80, 22, 0.1);
+}
+
+body.light-theme .menu-item a.active {
+  background: rgba(45, 80, 22, 0.08);
+  color: var(--peacock-blue);
+  border-color: rgba(45, 80, 22, 0.25);
+}
+
+body.light-theme .menu-icon {
+  color: var(--green-primary);
+  filter: drop-shadow(0 0 4px rgba(45, 80, 22, 0.2));
+}
+
+body.light-theme .footer1 {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 -5px 20px rgba(45, 80, 22, 0.08);
+  border-top-color: rgba(45, 80, 22, 0.15);
+}
+
+body.light-theme .footer-text {
+  color: var(--peacock-dark);
+}
+
+body.light-theme .footer-text strong {
+  color: var(--peacock-blue);
+}
+
+body.light-theme .footer-date {
+  color: var(--peacock-blue);
+}
+
+body.light-theme .footer-heart i {
+  color: var(--green-primary) !important;
+  filter: drop-shadow(0 0 8px rgba(45, 80, 22, 0.4));
+}
+
+/* ===== LIGHT THEME: HAMBURGER ===== */
+body.light-theme .oliven-nav-toggle i,
+body.light-theme .oliven-nav-toggle i::before,
+body.light-theme .oliven-nav-toggle i::after {
+  background: var(--peacock-blue);
+  box-shadow: 0 0 6px rgba(0, 107, 125, 0.4);
+}
+
+body.light-theme .oliven-nav-toggle:hover i,
+body.light-theme .oliven-nav-toggle:hover i::before,
+body.light-theme .oliven-nav-toggle:hover i::after {
+  background: var(--peacock-dark);
+  box-shadow: 0 0 12px rgba(0, 107, 125, 0.5);
+}
+
+/* ===== SMOOTH THEME TRANSITION ===== */
+body,
+.header,
+.countdown-section,
+.story,
+.organization,
+.whenwhere,
+.engagement-gallery,
+#oliven-aside,
+.hero-content,
+.event-card-inner,
+.countdown-box,
+.ceremony-item,
+.location-card,
+.hero-btn,
+.menu-item a {
+  transition: 
+    background 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* ===== FIX TAMIL TEXT CUTOFF IN LIGHT THEME ===== */
+body.light-theme .name-text {
+  font-size: 85px;
+  line-height: 1.1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 991px) {
+  body.light-theme .name-text {
+    font-size: 65px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.light-theme .name-text {
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body.light-theme .name-text {
+    font-size: 45px;
+  }
+}
+
+/* ===== FIX TAMIL NAMES - PREVENT CUTOFF ===== */
+/* Reduce name size in light theme to prevent overflow */
+body.light-theme .bride-section,
+body.light-theme .groom-section {
+  max-width: 100%;
+  padding: 0 25px;
+  flex: 1 1 auto;
+}
+
+body.light-theme .name-text {
+  font-size: 65px !important;
+  line-height: 1.3 !important;
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: normal;
+  max-width: 100%;
+  letter-spacing: 1px;
+}
+
+body.light-theme .names-section {
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Responsive adjustments for Tamil text */
+@media screen and (max-width: 991px) {
+  body.light-theme .name-text {
+    font-size: 54px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.light-theme .name-text {
+    font-size: 46px !important;
+  }
+  
+  body.light-theme .bride-section,
+  body.light-theme .groom-section {
+    padding: 0 15px;
+  }
+  
+  body.light-theme .names-section {
+    gap: 20px;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body.light-theme .name-text {
+    font-size: 36px !important;
+  }
+  
+  body.light-theme .names-section {
+    gap: 15px;
+    padding: 0 5px;
+  }
+}
+
+/* Ensure hero content has enough width */
+body.light-theme .hero-content {
+  max-width: 1200px;
+  padding: 50px 40px;
+}
+
+@media screen and (max-width: 768px) {
+  body.light-theme .hero-content {
+    padding: 35px 25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body.light-theme .hero-content {
+    padding: 25px 15px;
+  }
+}
+
+/* ===== FIX ORANGE/GOLD TEXT IN LIGHT MODE - BETTER CONTRAST ===== */
+/* Change top invitation text colors for better visibility */
+body.light-theme .om-symbol {
+  color: var(--green-primary) !important;
+  text-shadow: 0 0 15px rgba(45, 80, 22, 0.3);
+}
+
+body.light-theme .invite-line-1,
+body.light-theme .invite-line-2,
+body.light-theme .invite-line-3 {
+  color: var(--green-primary) !important;
+  text-shadow: 0 1px 3px rgba(45, 80, 22, 0.2);
+}
+
+/* Fix parent labels to be more visible */
+body.light-theme .parent-label {
+  color: var(--green-primary) !important;
+  font-weight: 700;
+}
+
+/* Ampersand should be green in light mode */
+body.light-theme .ampersand-large {
+  color: var(--green-primary) !important;
+  filter: drop-shadow(0 0 8px rgba(45, 80, 22, 0.3));
+}
+
+/* Ensure parent names are dark and readable */
+body.light-theme .parent-names {
+  color: var(--peacock-dark) !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+
+/* ===== LIGHT MODE SIDEBAR ON MOBILE - FIX DARK APPEARANCE ===== */
+@media screen and (max-width: 768px) {
+  body.light-theme.slide #oliven-aside {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F1F8F4 100%) !important;
+  }
+  
+  body.light-theme #oliven-aside {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F1F8F4 100%) !important;
+    box-shadow: -2px 0 30px rgba(45, 80, 22, 0.15);
+    border-left: 1px solid rgba(45, 80, 22, 0.2);
+  }
+  
+  /* Ensure all sidebar elements are visible in light mode on mobile */
+  body.light-theme .sidebar-content {
+    background: transparent;
+  }
+  
+  body.light-theme .logo-wrapper {
+    border-color: var(--green-primary) !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(241, 248, 244, 0.8)) !important;
+  }
+  
+  body.light-theme .couple-names,
+  body.light-theme .wedding-dates,
+  body.light-theme .menu-item a {
+    color: var(--peacock-dark) !important;
+  }
+  
+  body.light-theme .menu-icon {
+    color: var(--green-primary) !important;
+  }
+  
+  body.light-theme .footer-text,
+  body.light-theme .footer-date {
+    color: var(--peacock-dark) !important;
+  }
+}
+
+/* Fix hamburger menu color in light mode */
+body.light-theme .oliven-nav-toggle i,
+body.light-theme .oliven-nav-toggle i::before,
+body.light-theme .oliven-nav-toggle i::after {
+  background: var(--green-primary) !important;
+  box-shadow: 0 0 6px rgba(45, 80, 22, 0.4) !important;
+}
+
+body.light-theme .oliven-nav-toggle:hover i,
+body.light-theme .oliven-nav-toggle:hover i::before,
+body.light-theme .oliven-nav-toggle:hover i::after {
+  background: var(--green-dark) !important;
+  box-shadow: 0 0 12px rgba(45, 80, 22, 0.5) !important;
+}
+
+/* ===== ENSURE THEME TOGGLE BUTTON IS ON RIGHT - OVERRIDE ===== */
+.sacred-chant .theme-toggle-btn {
+  position: fixed !important;
+  top: 30px !important;
+  left: auto !important;
+  right: 30px !important;
+  transform: none !important;
+  z-index: 10000 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .sacred-chant .theme-toggle-btn {
+    top: 20px !important;
+    right: 20px !important;
+    left: auto !important;
+    z-index: 10000 !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sacred-chant .theme-toggle-btn {
+    top: 15px !important;
+    right: 15px !important;
+    left: auto !important;
+    z-index: 10000 !important;
+  }
+}
+
+/* ===== ADD FOREST GREEN TO MISSING CLASSES IN LIGHT MODE ===== */
+body.light-theme .oliven-title-meta {
+  color: var(--green-primary) !important;
+  text-shadow: 0 0 15px rgba(45, 80, 22, 0.3);
+}
+
+body.light-theme .gallery-description {
+  color: var(--peacock-dark) !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Ensure all section subtitles are green in light mode */
+body.light-theme .oliven-title-meta,
+body.light-theme .section-subtitle,
+body.light-theme .countdown-subtitle,
+body.light-theme .gallery-subtitle {
+  color: var(--green-primary) !important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+/* Make sure story subtitle is also green */
+body.light-theme .oliven-story-subtitle {
+  color: var(--green-primary) !important;
+  text-shadow: 0 0 12px rgba(45, 80, 22, 0.3);
+}
+
+/* ===== MAKE SUN ICON WHITE IN LIGHT MODE ===== */
+body.light-theme .theme-toggle-btn {
+  background: linear-gradient(135deg, rgba(0, 107, 125, 0.85), rgba(0, 80, 95, 0.9)) !important;
+  border-color: var(--peacock-blue) !important;
+}
+
+body.light-theme .sun-icon {
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) !important;
+  color: #FFFFFF !important;
+}
+
+body.light-theme .theme-toggle-btn:hover {
+  background: linear-gradient(135deg, var(--peacock-blue), var(--peacock-dark)) !important;
+}
+
+/* ===== INFINITE ROTATION ANIMATION FOR THEME TOGGLE ===== */
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.theme-toggle-btn {
+  animation: rotateClockwise 4s linear infinite !important;
+}
+
+/* Pause rotation on hover */
+.theme-toggle-btn:hover {
+  animation-play-state: paused !important;
+}
+
+/* Keep the icons stable while button rotates */
+.sun-icon,
+.moon-icon {
+  animation: rotateCounterClockwise 4s linear infinite;
+}
+
+@keyframes rotateCounterClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Pause icon counter-rotation on hover */
+.theme-toggle-btn:hover .sun-icon,
+.theme-toggle-btn:hover .moon-icon {
+  animation-play-state: paused !important;
+}
+
+/* ===== CHANGE SPECIFIED ELEMENTS TO WHITE IN LIGHT MODE ===== */
+
+/* Wedding dates in sidebar - white */
+body.light-theme .wedding-dates {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Venue name on hover - white */
+body.light-theme .location-card:hover .venue-name {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Venue address on hover - white */
+body.light-theme .location-card:hover .venue-address {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== FORCE THEME TOGGLE TO STAY FIXED ON SCROLL (CRITICAL) ===== */
+.theme-toggle-btn {
+  position: fixed !important;
+  z-index: 10000 !important;
+  top: 30px !important;
+  right: 30px !important;
+  left: auto !important;
+}
+
+/* Ensure it stays visible on mobile during scroll */
+@media screen and (max-width: 768px) {
+  .theme-toggle-btn {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .theme-toggle-btn {
+    position: fixed !important;
+    top: 15px !important;
+    right: 15px !important;
+    z-index: 10000 !important;
+  }
+}
+
+/* Override any parent positioning that might affect it */
+.sacred-chant {
+  position: static !important;
+}
+
+.header .sacred-chant .theme-toggle-btn {
+  position: fixed !important;
+  z-index: 10000 !important;
+}
+
+/* ===== CHANGE CLICK-HINT TO FOREST GREEN ON HOVER IN LIGHT MODE ===== */
+body.light-theme .location-map-wrapper:hover .click-hint {
+  color: var(--green-primary) !important;
+  background: rgba(45, 80, 22, 0.2) !important;
+  border-color: var(--green-primary) !important;
+}
+
+body.light-theme .click-hint {
+  color: var(--green-primary) !important;
+}
+
+/* ===== CHANGE WEDDING-DATES TO FOREST GREEN IN LIGHT MODE ===== */
+body.light-theme .wedding-dates {
+  color: var(--green-primary) !important;
+  text-shadow: 0 1px 3px rgba(45, 80, 22, 0.2);
+}
+
+/* ===== MAP OVERLAY - WHITE TEXT WITH GREEN BACKGROUND IN LIGHT MODE ===== */
+body.light-theme .click-hint {
+  color: #FFFFFF !important;
+  background: var(--green-primary) !important;
+  border-color: var(--green-primary) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 2px solid var(--green-primary);
+  font-weight: 600;
+}
+
+body.light-theme .location-map-wrapper:hover .click-hint {
+  color: #FFFFFF !important;
+  background: var(--green-dark) !important;
+  border-color: var(--green-dark) !important;
+  box-shadow: 0 5px 20px rgba(45, 80, 22, 0.4);
+}
+
+/* ===== WEDDING DATES FOOTER - WHITE IN LIGHT MODE ===== */
+body.light-theme .wedding-dates-footer-f,
+body.light-theme .wedding-dates {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Make sure footer dates are visible */
+body.light-theme .footer1 .wedding-dates,
+body.light-theme .footer-date {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== CHANGE HEART ICONS TO FOREST GREEN IN LIGHT MODE ===== */
+body.light-theme .ti-heart,
+body.light-theme i.ti-heart {
+  color: var(--green-primary) !important;
+  filter: drop-shadow(0 0 8px rgba(45, 80, 22, 0.4));
+}
+
+/* Heart icons in footer */
+body.light-theme .footer-heart i,
+body.light-theme .footer-heart .ti-heart {
+  color: var(--green-primary) !important;
+  filter: drop-shadow(0 0 8px rgba(45, 80, 22, 0.5));
+}
+
+/* Heart icons in dividers */
+body.light-theme .divider-heart,
+body.light-theme .divider-icon {
+  color: var(--green-primary) !important;
+  filter: drop-shadow(0 0 10px rgba(45, 80, 22, 0.4));
+}
+
+/* Heart icons in floating elements */
+body.light-theme .floating-heart {
+  color: var(--green-primary) !important;
+  opacity: 0.12;
+  filter: drop-shadow(0 0 8px rgba(45, 80, 22, 0.3));
+}
+
+/* ===== COUNTDOWN BOX TEXT - WHITE ON HOVER IN LIGHT MODE ===== */
+body.light-theme .countdown-box:hover .countdown-number {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.8));
+}
+
+body.light-theme .countdown-box:hover .countdown-label {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Add background color change on hover for better contrast */
+body.light-theme .countdown-box:hover {
+  background: var(--green-primary) !important;
+  border-color: var(--green-dark) !important;
+}
+
+/* ===== FIX WEDDING DATES - DIFFERENT COLORS FOR SIDEBAR VS FOOTER ===== */
+
+/* Sidebar wedding dates - FOREST GREEN in light mode */
+body.light-theme #oliven-aside .wedding-dates,
+body.light-theme .sidebar-content .wedding-dates,
+body.light-theme .oliven-logo .wedding-dates {
+  color: var(--green-primary) !important;
+  text-shadow: 0 1px 3px rgba(45, 80, 22, 0.2);
+}
+
+/* Footer wedding dates - WHITE in light mode */
+body.light-theme .footer2 .wedding-dates,
+body.light-theme .footer1 .wedding-dates,
+body.light-theme footer .wedding-dates {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* More specific footer date selectors */
+body.light-theme .footer2 .wedding-date-wrapper .wedding-dates,
+body.light-theme .wedding-date-wrapper .wedding-dates {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure footer-date class is also white */
+body.light-theme .footer2 .footer-date,
+body.light-theme footer .footer-date {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== SIDEBAR FOOTER DATE - FOREST GREEN IN LIGHT MODE ===== */
+body.light-theme #oliven-aside .footer-date,
+body.light-theme .sidebar-content .footer-date,
+body.light-theme .footer1 .footer-date {
+  color: var(--green-primary) !important;
+  text-shadow: 0 1px 3px rgba(45, 80, 22, 0.2);
+}
+
+/* Ensure page footer date stays white */
+body.light-theme .footer2 .footer-date,
+body.light-theme footer:not(#oliven-aside footer) .footer-date {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== FIX SIDEBAR SCROLLING - MAKE CONTENT FIT WITHOUT SCROLL ===== */
+#oliven-aside {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#oliven-aside::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+
+.sidebar-content {
+  padding: 15px 15px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+/* Compact logo section */
+#oliven-aside .oliven-logo {
+  text-align: center;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+
+.logo-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 8px;
+}
+
+.couple-names {
+  font-size: 24px;
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.date-divider {
+  margin: 5px 0;
+}
+
+.wedding-dates {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  margin: 0;
+}
+
+/* Compact menu */
+#oliven-aside .oliven-main-menu {
+  flex: 1;
+  margin: 10px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#oliven-aside .oliven-main-menu::-webkit-scrollbar {
+  display: none;
+}
+
+#oliven-aside .oliven-main-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item a {
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.menu-icon {
+  width: 26px;
+  margin-right: 8px;
+  font-size: 15px;
+}
+
+/* Compact footer */
+#oliven-aside .footer1 {
+  flex-shrink: 0;
+  padding-top: 12px;
+  padding-bottom: 15px;
+  margin-top: auto;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.footer1 .separator {
+  width: 50px;
+  margin: 0 auto 10px;
+}
+
+.footer-text {
+  font-size: 10px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.footer-date {
+  font-size: 9px;
+}
+
+.footer-heart {
+  margin-top: 8px;
+}
+
+.footer-heart i {
+  font-size: 16px;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .sidebar-content {
+    padding: 12px 12px;
+  }
+  
+  .logo-wrapper {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .couple-names {
+    font-size: 22px;
+  }
+  
+  .wedding-dates {
+    font-size: 9px;
+  }
+  
+  .menu-item a {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+  
+  .menu-icon {
+    width: 24px;
+    font-size: 14px;
+  }
+  
+  .footer-text {
+    font-size: 9px;
+  }
+  
+  .footer-date {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar-content {
+    padding: 10px 10px;
+  }
+  
+  .logo-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 6px;
+  }
+  
+  .couple-names {
+    font-size: 20px;
+  }
+  
+  .ampersand {
+    font-size: 16px;
+  }
+  
+  .wedding-dates {
+    font-size: 8px;
+  }
+  
+  .menu-item a {
+    padding: 8px 8px;
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+  
+  .menu-icon {
+    width: 22px;
+    font-size: 13px;
+    margin-right: 6px;
+  }
+  
+  #oliven-aside .footer1 {
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+  
+  .footer-text {
+    font-size: 8px;
+  }
+  
+  .footer-heart i {
+    font-size: 14px;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-height: 600px) {
+  .sidebar-content {
+    padding: 8px 10px;
+  }
+  
+  .logo-wrapper {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 5px;
+  }
+  
+  .couple-names {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  
+  .date-divider {
+    margin: 3px 0;
+  }
+  
+  .divider-line {
+    width: 40px;
+  }
+  
+  .wedding-dates {
+    font-size: 8px;
+  }
+  
+  #oliven-aside .oliven-logo {
+    margin-bottom: 8px;
+  }
+  
+  #oliven-aside .oliven-main-menu {
+    margin: 8px 0;
+  }
+  
+  .menu-item a {
+    padding: 7px 8px;
+    font-size: 11px;
+    margin-bottom: 2px;
+  }
+  
+  .menu-icon {
+    width: 20px;
+    font-size: 12px;
+  }
+  
+  #oliven-aside .footer1 {
+    padding-top: 8px;
+    padding-bottom: 10px;
+  }
+  
+  .footer-text {
+    font-size: 8px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  
+  .footer-heart {
+    margin-top: 6px;
+  }
+  
+  .footer-heart i {
+    font-size: 13px;
+  }
+}
+
+/* ===== MUSIC CONTROL - SHOW PLAY/PAUSE ICONS ===== */
+.music-control i {
+  position: relative;
+  z-index: 10;
+  color: #fff !important;
+  font-size: 32px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Show pause icon when playing */
+.music-control.playing i.fa-pause {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.music-control.playing i.fa-play {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+}
+
+/* Show play icon when paused */
+.music-control.paused i.fa-play {
+  opacity: 1;
+  transform: scale(1);
+  padding-left: 4px;
+}
+
+.music-control.paused i.fa-pause {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+}
+
+/* Hide music waves when paused */
+.music-control.paused .music-waves {
+  display: none !important;
+}
+
+/* Show music waves when playing */
+.music-control.playing .music-waves {
+  display: flex !important;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .music-control i {
+    font-size: 28px !important;
+  }
+  
+  .music-control.paused i.fa-play {
+    padding-left: 3px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .music-control i {
+    font-size: 26px !important;
+  }
+  
+  .music-control.paused i.fa-play {
+    padding-left: 3px;
+  }
+}
+
+/* ===== MUSIC CONTROL - UPDATED FOR CONDITIONAL RENDERING ===== */
+/* Override previous styles to work with your component structure */
+
+.music-control {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #BD945A, #a67f4a);
+  border: none;
+  border-radius: 50%;
+  color: #fff !important;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9998;
+  box-shadow: 0 8px 25px rgba(189, 148, 90, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  
+  /* Mobile touch optimizations */
+  -webkit-tap-highlight-color: rgba(189, 148, 90, 0.3);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.music-control:active {
+  transform: scale(0.9);
+  box-shadow: 0 4px 15px rgba(189, 148, 90, 0.6);
+}
+
+/* Paused state - gray background */
+.music-control.paused {
+  background: linear-gradient(135deg, #888, #666);
+}
+
+.music-control.paused:active {
+  background: linear-gradient(135deg, #666, #444);
+}
+
+/* Icons - ensure visibility */
+.music-control i {
+  position: relative;
+  z-index: 10;
+  color: #fff !important;
+  font-size: 28px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Play icon - slightly offset for visual centering */
+.music-control.paused i.fa-play {
+  font-size: 32px !important;
+  padding-left: 4px;
+}
+
+/* Music icon when playing */
+.music-control.playing i.fa-music {
+  font-size: 28px !important;
+}
+
+/* Music waves container */
+.music-control .music-waves {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 20px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Individual wave bars */
+.music-control .wave {
+  width: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  animation: wave-animation 0.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.music-control .wave-1 {
+  height: 8px;
+  animation-delay: 0s;
+}
+
+.music-control .wave-2 {
+  height: 14px;
+  animation-delay: 0.2s;
+}
+
+.music-control .wave-3 {
+  height: 10px;
+  animation-delay: 0.4s;
+}
+
+@keyframes wave-animation {
+  0%, 100% {
+    height: 8px;
+  }
+  50% {
+    height: 16px;
+  }
+}
+
+/* Ripple effect when playing */
+.music-control.playing::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(189, 148, 90, 0.3);
+  animation: ripple 2s infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Light theme adjustments */
+body.light-theme .music-control.playing {
+  background: linear-gradient(135deg, var(--green-primary), var(--green-light));
+  box-shadow: 0 8px 25px rgba(45, 80, 22, 0.4);
+}
+
+body.light-theme .music-control.playing:active {
+  box-shadow: 0 4px 15px rgba(45, 80, 22, 0.6);
+}
+
+body.light-theme .music-control.paused {
+  background: linear-gradient(135deg, #888, #666);
+}
+
+body.light-theme .music-control.playing::before {
+  background: rgba(45, 80, 22, 0.3);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .music-control {
+    width: 65px;
+    height: 65px;
+    font-size: 26px;
+    bottom: 85px;
+    right: 20px;
+  }
+  
+  .music-control i {
+    font-size: 26px !important;
+  }
+  
+  .music-control.paused i.fa-play {
+    font-size: 30px !important;
+    padding-left: 3px;
+  }
+  
+  .music-control.playing i.fa-music {
+    font-size: 26px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .music-control {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    bottom: 80px;
+    right: 15px;
+  }
+  
+  .music-control i {
+    font-size: 24px !important;
+  }
+  
+  .music-control.paused i.fa-play {
+    font-size: 28px !important;
+    padding-left: 3px;
+  }
+  
+  .music-control.playing i.fa-music {
+    font-size: 24px !important;
+  }
+  
+  .music-waves {
+    height: 18px;
+  }
+}
+
+/* ===== ELEGANT FOREST GREEN DECORATIVE ELEMENTS FOR LIGHT THEME ===== */
+
+/* Replace shadow overlays with decorative patterns */
+body.light-theme .header::before,
+body.light-theme .countdown-section::before,
+body.light-theme .story::before,
+body.light-theme .organization::before,
+body.light-theme .whenwhere::before,
+body.light-theme .engagement-gallery::before {
+  background: none;
+}
+
+/* Add elegant leaf and floral patterns */
+body.light-theme .header::after,
+body.light-theme .countdown-section::after,
+body.light-theme .story::after,
+body.light-theme .organization::after,
+body.light-theme .whenwhere::after,
+body.light-theme .engagement-gallery::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    /* Large decorative leaves */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 Q 70 30, 70 50 Q 70 70, 50 90 Q 40 70, 40 50 Q 40 30, 50 10 Z' fill='%232D5016' opacity='0.3'/%3E%3C/svg%3E"),
+    /* Small leaves */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 10 Q 40 20, 40 30 Q 40 40, 30 50 Q 25 40, 25 30 Q 25 20, 30 10 Z' fill='%233A6B1E' opacity='0.25'/%3E%3C/svg%3E"),
+    /* Sparkles/flowers */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='3' fill='%232D5016' opacity='0.4'/%3E%3Cpath d='M 20 10 L 22 18 L 30 20 L 22 22 L 20 30 L 18 22 L 10 20 L 18 18 Z' fill='%232D5016' opacity='0.3'/%3E%3C/svg%3E"),
+    /* Vine patterns */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M 10 60 Q 30 40, 50 60 Q 70 80, 90 60' stroke='%233A6B1E' stroke-width='2' fill='none' opacity='0.2'/%3E%3Ccircle cx='30' cy='50' r='4' fill='%232D5016' opacity='0.25'/%3E%3Ccircle cx='70' cy='70' r='4' fill='%232D5016' opacity='0.25'/%3E%3C/svg%3E"),
+    /* Small floral accents */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Ccircle cx='25' cy='25' r='2' fill='%232D5016' opacity='0.4'/%3E%3Ccircle cx='25' cy='15' r='5' fill='%233A6B1E' opacity='0.2'/%3E%3Ccircle cx='35' cy='25' r='5' fill='%233A6B1E' opacity='0.2'/%3E%3Ccircle cx='25' cy='35' r='5' fill='%233A6B1E' opacity='0.2'/%3E%3Ccircle cx='15' cy='25' r='5' fill='%233A6B1E' opacity='0.2'/%3E%3C/svg%3E");
+  background-size: 
+    250px 250px,    /* Large leaves */
+    150px 150px,    /* Small leaves */
+    100px 100px,    /* Sparkles */
+    300px 300px,    /* Vines */
+    120px 120px;    /* Florals */
+  background-position: 
+    10% 15%,        /* Large leaves */
+    85% 25%,        /* Small leaves */
+    30% 60%,        /* Sparkles */
+    50% 40%,        /* Vines */
+    70% 80%;        /* Florals */
+  background-repeat: no-repeat;
+  animation: floatDecor 30s ease-in-out infinite;
+}
+
+@keyframes floatDecor {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-15px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-25px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(15px);
+  }
+}
+
+/* Additional scattered leaf elements */
+body.light-theme .header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    /* Additional scattered leaves top left */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 20 Q 55 30, 55 45 Q 55 60, 40 70 Q 32 60, 32 45 Q 32 30, 40 20 Z' fill='%232D5016' opacity='0.35'/%3E%3C/svg%3E"),
+    /* Top right corner */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70'%3E%3Cpath d='M35 15 Q 45 25, 45 35 Q 45 45, 35 55 Q 30 45, 30 35 Q 30 25, 35 15 Z' fill='%233A6B1E' opacity='0.3'/%3E%3C/svg%3E"),
+    /* Bottom left */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Cpath d='M45 25 Q 60 35, 60 50 Q 60 65, 45 75 Q 37 65, 37 50 Q 37 35, 45 25 Z' fill='%232D5016' opacity='0.28'/%3E%3C/svg%3E"),
+    /* Small accent sparkles */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath d='M 15 5 L 16 13 L 25 15 L 16 17 L 15 25 L 14 17 L 5 15 L 14 13 Z' fill='%232D5016' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 
+    180px 180px,
+    140px 140px,
+    200px 200px,
+    80px 80px;
+  background-position: 
+    5% 10%,
+    92% 8%,
+    8% 85%,
+    88% 75%;
+  background-repeat: no-repeat;
+  animation: floatDecorSlow 35s ease-in-out infinite;
+}
+
+@keyframes floatDecorSlow {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) translateX(15px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-15px) rotate(-5deg);
+  }
+}
+
+/* Corner decorative elements */
+body.light-theme .hero-content::before {
+  background: none;
+}
+
+body.light-theme .hero-content::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cpath d='M75 30 Q 100 50, 100 75 Q 100 100, 75 120 Q 60 100, 60 75 Q 60 50, 75 30 Z' fill='%232D5016' opacity='0.4'/%3E%3Cpath d='M 50 50 Q 40 60, 40 75 Q 40 90, 50 100' stroke='%233A6B1E' stroke-width='2' fill='none' opacity='0.3'/%3E%3C/svg%3E");
+  animation: rotateDecor 20s linear infinite;
+}
+
+/* Add decorative element to bottom right */
+body.light-theme .hero-content {
+  position: relative;
+}
+
+body.light-theme .hero-content::after {
+  top: auto;
+  left: auto;
+  bottom: -40px;
+  right: -40px;
+}
+
+@keyframes rotateDecor {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add subtle border decorations to cards */
+body.light-theme .event-card-inner::before,
+body.light-theme .countdown-box::after,
+body.light-theme .ceremony-item::before,
+body.light-theme .location-card::before {
+  opacity: 0.08;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 10 Q 40 20, 40 30 Q 40 40, 30 50 Q 25 40, 25 30 Q 25 20, 30 10 Z' fill='%232D5016' opacity='0.5'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M 20 10 L 22 18 L 30 20 L 22 22 L 20 30 L 18 22 L 10 20 L 18 18 Z' fill='%233A6B1E' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 80px 80px, 50px 50px;
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+}
+
+/* Floating leaves in corners */
+body.light-theme section {
+  position: relative;
+}
+
+body.light-theme .story-image-container::after,
+body.light-theme .slider-image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  opacity: 0.2;
+  pointer-events: none;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 20 Q 55 30, 55 45 Q 55 60, 40 70 Q 32 60, 32 45 Q 32 30, 40 20 Z' fill='%232D5016' opacity='0.6'/%3E%3C/svg%3E");
+  animation: leafSway 4s ease-in-out infinite;
+}
+
+@keyframes leafSway {
+  0%, 100% {
+    transform: rotate(0deg) translateX(0);
+  }
+  25% {
+    transform: rotate(5deg) translateX(5px);
+  }
+  75% {
+    transform: rotate(-5deg) translateX(-5px);
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  body.light-theme .header::after,
+  body.light-theme .countdown-section::after,
+  body.light-theme .story::after,
+  body.light-theme .organization::after,
+  body.light-theme .whenwhere::after,
+  body.light-theme .engagement-gallery::after {
+    opacity: 0.1;
+    background-size: 
+      180px 180px,
+      120px 120px,
+      80px 80px,
+      220px 220px,
+      100px 100px;
+  }
+  
+  body.light-theme .header::before {
+    opacity: 0.08;
+    background-size: 
+      140px 140px,
+      110px 110px,
+      160px 160px,
+      60px 60px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body.light-theme .header::after,
+  body.light-theme .countdown-section::after,
+  body.light-theme .story::after,
+  body.light-theme .organization::after,
+  body.light-theme .whenwhere::after,
+  body.light-theme .engagement-gallery::after {
+    opacity: 0.08;
+  }
+}
+
+/* ===== FIX THEME TOGGLE - STAY VISIBLE THROUGHOUT ENTIRE PAGE ===== */
+/* Move theme toggle outside of sacred-chant container */
+
+/* Remove old positioning from sacred-chant */
+.sacred-chant .theme-toggle-btn {
+  position: static !important;
+  display: none !important;
+}
+
+/* Create new global positioning for theme toggle */
+.theme-toggle-btn-global {
+  position: fixed !important;
+  top: 30px !important;
+  right: 30px !important;
+  left: auto !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(189, 148, 90, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(189, 148, 90, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 10000 !important;
+  overflow: hidden;
+  animation: rotateClockwise 4s linear infinite !important;
+}
+
+.theme-toggle-btn-global::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(189, 148, 90, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-toggle-btn-global:hover::before {
+  opacity: 1;
+}
+
+.theme-toggle-btn-global:hover {
+  background: rgba(189, 148, 90, 0.25);
+  border-color: #BD945A;
+  transform: scale(1.12);
+  box-shadow: 
+    0 12px 35px rgba(189, 148, 90, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  animation-play-state: paused !important;
+}
+
+.theme-toggle-btn-global:active {
+  transform: scale(1);
+}
+
+.theme-toggle-btn-global .sun-icon,
+.theme-toggle-btn-global .moon-icon {
+  position: absolute;
+  font-size: 26px;
+  line-height: 1;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 2px 8px rgba(189, 148, 90, 0.5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  animation: rotateCounterClockwise 4s linear infinite;
+}
+
+.theme-toggle-btn-global:hover .sun-icon,
+.theme-toggle-btn-global:hover .moon-icon {
+  animation-play-state: paused !important;
+}
+
+.theme-toggle-btn-global .sun-icon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0);
+}
+
+.theme-toggle-btn-global .moon-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Light Theme - Show sun, hide moon */
+body.light-theme .theme-toggle-btn-global {
+  background: linear-gradient(135deg, rgba(0, 107, 125, 0.85), rgba(0, 80, 95, 0.9)) !important;
+  border-color: var(--peacock-blue) !important;
+}
+
+body.light-theme .theme-toggle-btn-global .sun-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) !important;
+  color: #FFFFFF !important;
+}
+
+body.light-theme .theme-toggle-btn-global .moon-icon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+body.light-theme .theme-toggle-btn-global:hover {
+  background: linear-gradient(135deg, var(--peacock-blue), var(--peacock-dark)) !important;
+}
+
+/* Mobile Responsive - ALWAYS VISIBLE */
+@media screen and (max-width: 768px) {
+  .theme-toggle-btn-global {
+    top: 20px !important;
+    right: 20px !important;
+    width: 45px;
+    height: 45px;
+    z-index: 10000 !important;
+  }
+  
+  .theme-toggle-btn-global .sun-icon,
+  .theme-toggle-btn-global .moon-icon {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .theme-toggle-btn-global {
+    top: 15px !important;
+    right: 15px !important;
+    width: 40px;
+    height: 40px;
+    z-index: 10000 !important;
+  }
+  
+  .theme-toggle-btn-global .sun-icon,
+  .theme-toggle-btn-global .moon-icon {
+    font-size: 20px;
+  }
+}
+
+/* Ensure it's always above everything */
+.theme-toggle-btn-global {
+  pointer-events: auto !important;
+}
+
+/* If using old class, hide it */
+.theme-toggle-btn:not(.theme-toggle-btn-global) {
+  display: none !important;
+}
+
+/* ===== ENSURE THEME TOGGLE BUTTON IS CLICKABLE ===== */
+.theme-toggle-btn-global {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-tap-highlight-color: rgba(189, 148, 90, 0.3);
+}
+
+/* Make sure icons don't block clicks */
+.theme-toggle-btn-global * {
+  pointer-events: none !important;
+}
+
+/* Visual feedback on click */
+.theme-toggle-btn-global:active {
+  transform: scale(0.92) !important;
+}
+
+/* ===== ENSURE DARK MODE IS DEFAULT ===== */
+/* Remove light-theme class by default */
+body {
+  /* Dark mode styles are default */
+  background: #0a0a0a;
+}
+
+/* Only apply light theme when class is present */
+body:not(.light-theme) {
+  /* Ensure dark mode is active */
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
