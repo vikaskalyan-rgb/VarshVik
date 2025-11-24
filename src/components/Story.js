@@ -27,11 +27,11 @@ function Story () {
         <div className='row'>
           <div className='col-md-12'>
             <div className='story-content-wrapper'>
-              <div className='story-quote-section'>
+              
                 <span className='quote-mark-left'>"</span>
                 <h3 className='story-quote-text'>Together in love, bound by tradition</h3>
                 <span className='quote-mark-right'>"</span>
-              </div>
+             
 
               
                 <p className='story-lead'>

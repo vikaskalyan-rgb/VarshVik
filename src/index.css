@@ -7465,6 +7465,7 @@ body.light-theme .oliven-nav-toggle:hover i::after {
   left: auto !important;
   right: 30px !important;
   transform: none !important;
+  z-index: 10000 !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -7472,6 +7473,7 @@ body.light-theme .oliven-nav-toggle:hover i::after {
     top: 20px !important;
     right: 20px !important;
     left: auto !important;
+    z-index: 10000 !important;
   }
 }
 
@@ -7480,6 +7482,7 @@ body.light-theme .oliven-nav-toggle:hover i::after {
     top: 15px !important;
     right: 15px !important;
     left: auto !important;
+    z-index: 10000 !important;
   }
 }
 
@@ -7564,4 +7567,770 @@ body.light-theme .theme-toggle-btn:hover {
 .theme-toggle-btn:hover .sun-icon,
 .theme-toggle-btn:hover .moon-icon {
   animation-play-state: paused !important;
+}
+
+/* ===== CHANGE SPECIFIED ELEMENTS TO WHITE IN LIGHT MODE ===== */
+
+/* Wedding dates in sidebar - white */
+body.light-theme .wedding-dates {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Venue name on hover - white */
+body.light-theme .location-card:hover .venue-name {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Venue address on hover - white */
+body.light-theme .location-card:hover .venue-address {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== FORCE THEME TOGGLE TO STAY FIXED ON SCROLL (CRITICAL) ===== */
+.theme-toggle-btn {
+  position: fixed !important;
+  z-index: 10000 !important;
+  top: 30px !important;
+  right: 30px !important;
+  left: auto !important;
+}
+
+/* Ensure it stays visible on mobile during scroll */
+@media screen and (max-width: 768px) {
+  .theme-toggle-btn {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .theme-toggle-btn {
+    position: fixed !important;
+    top: 15px !important;
+    right: 15px !important;
+    z-index: 10000 !important;
+  }
+}
+
+/* Override any parent positioning that might affect it */
+.sacred-chant {
+  position: static !important;
+}
+
+.header .sacred-chant .theme-toggle-btn {
+  position: fixed !important;
+  z-index: 10000 !important;
+}
+
+/* ===== CHANGE CLICK-HINT TO FOREST GREEN ON HOVER IN LIGHT MODE ===== */
+body.light-theme .location-map-wrapper:hover .click-hint {
+  color: var(--green-primary) !important;
+  background: rgba(45, 80, 22, 0.2) !important;
+  border-color: var(--green-primary) !important;
+}
+
+body.light-theme .click-hint {
+  color: var(--green-primary) !important;
+}
+
+/* ===== CHANGE WEDDING-DATES TO FOREST GREEN IN LIGHT MODE ===== */
+body.light-theme .wedding-dates {
+  color: var(--green-primary) !important;
+  text-shadow: 0 1px 3px rgba(45, 80, 22, 0.2);
+}
+
+/* ===== MAP OVERLAY - WHITE TEXT WITH GREEN BACKGROUND IN LIGHT MODE ===== */
+body.light-theme .click-hint {
+  color: #FFFFFF !important;
+  background: var(--green-primary) !important;
+  border-color: var(--green-primary) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 2px solid var(--green-primary);
+  font-weight: 600;
+}
+
+body.light-theme .location-map-wrapper:hover .click-hint {
+  color: #FFFFFF !important;
+  background: var(--green-dark) !important;
+  border-color: var(--green-dark) !important;
+  box-shadow: 0 5px 20px rgba(45, 80, 22, 0.4);
+}
+
+/* ===== WEDDING DATES FOOTER - WHITE IN LIGHT MODE ===== */
+body.light-theme .wedding-dates-footer-f,
+body.light-theme .wedding-dates {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Make sure footer dates are visible */
+body.light-theme .footer1 .wedding-dates,
+body.light-theme .footer-date {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== CHANGE HEART ICONS TO FOREST GREEN IN LIGHT MODE ===== */
+body.light-theme .ti-heart,
+body.light-theme i.ti-heart {
+  color: var(--green-primary) !important;
+  filter: drop-shadow(0 0 8px rgba(45, 80, 22, 0.4));
+}
+
+/* Heart icons in footer */
+body.light-theme .footer-heart i,
+body.light-theme .footer-heart .ti-heart {
+  color: var(--green-primary) !important;
+  filter: drop-shadow(0 0 8px rgba(45, 80, 22, 0.5));
+}
+
+/* Heart icons in dividers */
+body.light-theme .divider-heart,
+body.light-theme .divider-icon {
+  color: var(--green-primary) !important;
+  filter: drop-shadow(0 0 10px rgba(45, 80, 22, 0.4));
+}
+
+/* Heart icons in floating elements */
+body.light-theme .floating-heart {
+  color: var(--green-primary) !important;
+  opacity: 0.12;
+  filter: drop-shadow(0 0 8px rgba(45, 80, 22, 0.3));
+}
+
+/* ===== COUNTDOWN BOX TEXT - WHITE ON HOVER IN LIGHT MODE ===== */
+body.light-theme .countdown-box:hover .countdown-number {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.8));
+}
+
+body.light-theme .countdown-box:hover .countdown-label {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Add background color change on hover for better contrast */
+body.light-theme .countdown-box:hover {
+  background: var(--green-primary) !important;
+  border-color: var(--green-dark) !important;
+}
+
+/* ===== FIX WEDDING DATES - DIFFERENT COLORS FOR SIDEBAR VS FOOTER ===== */
+
+/* Sidebar wedding dates - FOREST GREEN in light mode */
+body.light-theme #oliven-aside .wedding-dates,
+body.light-theme .sidebar-content .wedding-dates,
+body.light-theme .oliven-logo .wedding-dates {
+  color: var(--green-primary) !important;
+  text-shadow: 0 1px 3px rgba(45, 80, 22, 0.2);
+}
+
+/* Footer wedding dates - WHITE in light mode */
+body.light-theme .footer2 .wedding-dates,
+body.light-theme .footer1 .wedding-dates,
+body.light-theme footer .wedding-dates {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* More specific footer date selectors */
+body.light-theme .footer2 .wedding-date-wrapper .wedding-dates,
+body.light-theme .wedding-date-wrapper .wedding-dates {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure footer-date class is also white */
+body.light-theme .footer2 .footer-date,
+body.light-theme footer .footer-date {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== SIDEBAR FOOTER DATE - FOREST GREEN IN LIGHT MODE ===== */
+body.light-theme #oliven-aside .footer-date,
+body.light-theme .sidebar-content .footer-date,
+body.light-theme .footer1 .footer-date {
+  color: var(--green-primary) !important;
+  text-shadow: 0 1px 3px rgba(45, 80, 22, 0.2);
+}
+
+/* Ensure page footer date stays white */
+body.light-theme .footer2 .footer-date,
+body.light-theme footer:not(#oliven-aside footer) .footer-date {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== FIX SIDEBAR SCROLLING - MAKE CONTENT FIT WITHOUT SCROLL ===== */
+#oliven-aside {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#oliven-aside::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+
+.sidebar-content {
+  padding: 15px 15px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+/* Compact logo section */
+#oliven-aside .oliven-logo {
+  text-align: center;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+
+.logo-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 8px;
+}
+
+.couple-names {
+  font-size: 24px;
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.date-divider {
+  margin: 5px 0;
+}
+
+.wedding-dates {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  margin: 0;
+}
+
+/* Compact menu */
+#oliven-aside .oliven-main-menu {
+  flex: 1;
+  margin: 10px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#oliven-aside .oliven-main-menu::-webkit-scrollbar {
+  display: none;
+}
+
+#oliven-aside .oliven-main-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item a {
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.menu-icon {
+  width: 26px;
+  margin-right: 8px;
+  font-size: 15px;
+}
+
+/* Compact footer */
+#oliven-aside .footer1 {
+  flex-shrink: 0;
+  padding-top: 12px;
+  padding-bottom: 15px;
+  margin-top: auto;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.footer1 .separator {
+  width: 50px;
+  margin: 0 auto 10px;
+}
+
+.footer-text {
+  font-size: 10px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.footer-date {
+  font-size: 9px;
+}
+
+.footer-heart {
+  margin-top: 8px;
+}
+
+.footer-heart i {
+  font-size: 16px;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .sidebar-content {
+    padding: 12px 12px;
+  }
+  
+  .logo-wrapper {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .couple-names {
+    font-size: 22px;
+  }
+  
+  .wedding-dates {
+    font-size: 9px;
+  }
+  
+  .menu-item a {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+  
+  .menu-icon {
+    width: 24px;
+    font-size: 14px;
+  }
+  
+  .footer-text {
+    font-size: 9px;
+  }
+  
+  .footer-date {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar-content {
+    padding: 10px 10px;
+  }
+  
+  .logo-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 6px;
+  }
+  
+  .couple-names {
+    font-size: 20px;
+  }
+  
+  .ampersand {
+    font-size: 16px;
+  }
+  
+  .wedding-dates {
+    font-size: 8px;
+  }
+  
+  .menu-item a {
+    padding: 8px 8px;
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+  
+  .menu-icon {
+    width: 22px;
+    font-size: 13px;
+    margin-right: 6px;
+  }
+  
+  #oliven-aside .footer1 {
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+  
+  .footer-text {
+    font-size: 8px;
+  }
+  
+  .footer-heart i {
+    font-size: 14px;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-height: 600px) {
+  .sidebar-content {
+    padding: 8px 10px;
+  }
+  
+  .logo-wrapper {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 5px;
+  }
+  
+  .couple-names {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  
+  .date-divider {
+    margin: 3px 0;
+  }
+  
+  .divider-line {
+    width: 40px;
+  }
+  
+  .wedding-dates {
+    font-size: 8px;
+  }
+  
+  #oliven-aside .oliven-logo {
+    margin-bottom: 8px;
+  }
+  
+  #oliven-aside .oliven-main-menu {
+    margin: 8px 0;
+  }
+  
+  .menu-item a {
+    padding: 7px 8px;
+    font-size: 11px;
+    margin-bottom: 2px;
+  }
+  
+  .menu-icon {
+    width: 20px;
+    font-size: 12px;
+  }
+  
+  #oliven-aside .footer1 {
+    padding-top: 8px;
+    padding-bottom: 10px;
+  }
+  
+  .footer-text {
+    font-size: 8px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  
+  .footer-heart {
+    margin-top: 6px;
+  }
+  
+  .footer-heart i {
+    font-size: 13px;
+  }
+}
+
+/* ===== MUSIC CONTROL - SHOW PLAY/PAUSE ICONS ===== */
+.music-control i {
+  position: relative;
+  z-index: 10;
+  color: #fff !important;
+  font-size: 32px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Show pause icon when playing */
+.music-control.playing i.fa-pause {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.music-control.playing i.fa-play {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+}
+
+/* Show play icon when paused */
+.music-control.paused i.fa-play {
+  opacity: 1;
+  transform: scale(1);
+  padding-left: 4px;
+}
+
+.music-control.paused i.fa-pause {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+}
+
+/* Hide music waves when paused */
+.music-control.paused .music-waves {
+  display: none !important;
+}
+
+/* Show music waves when playing */
+.music-control.playing .music-waves {
+  display: flex !important;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .music-control i {
+    font-size: 28px !important;
+  }
+  
+  .music-control.paused i.fa-play {
+    padding-left: 3px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .music-control i {
+    font-size: 26px !important;
+  }
+  
+  .music-control.paused i.fa-play {
+    padding-left: 3px;
+  }
+}
+
+/* ===== MUSIC CONTROL - UPDATED FOR CONDITIONAL RENDERING ===== */
+/* Override previous styles to work with your component structure */
+
+.music-control {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #BD945A, #a67f4a);
+  border: none;
+  border-radius: 50%;
+  color: #fff !important;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9998;
+  box-shadow: 0 8px 25px rgba(189, 148, 90, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  
+  /* Mobile touch optimizations */
+  -webkit-tap-highlight-color: rgba(189, 148, 90, 0.3);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.music-control:active {
+  transform: scale(0.9);
+  box-shadow: 0 4px 15px rgba(189, 148, 90, 0.6);
+}
+
+/* Paused state - gray background */
+.music-control.paused {
+  background: linear-gradient(135deg, #888, #666);
+}
+
+.music-control.paused:active {
+  background: linear-gradient(135deg, #666, #444);
+}
+
+/* Icons - ensure visibility */
+.music-control i {
+  position: relative;
+  z-index: 10;
+  color: #fff !important;
+  font-size: 28px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Play icon - slightly offset for visual centering */
+.music-control.paused i.fa-play {
+  font-size: 32px !important;
+  padding-left: 4px;
+}
+
+/* Music icon when playing */
+.music-control.playing i.fa-music {
+  font-size: 28px !important;
+}
+
+/* Music waves container */
+.music-control .music-waves {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 20px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Individual wave bars */
+.music-control .wave {
+  width: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  animation: wave-animation 0.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.music-control .wave-1 {
+  height: 8px;
+  animation-delay: 0s;
+}
+
+.music-control .wave-2 {
+  height: 14px;
+  animation-delay: 0.2s;
+}
+
+.music-control .wave-3 {
+  height: 10px;
+  animation-delay: 0.4s;
+}
+
+@keyframes wave-animation {
+  0%, 100% {
+    height: 8px;
+  }
+  50% {
+    height: 16px;
+  }
+}
+
+/* Ripple effect when playing */
+.music-control.playing::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(189, 148, 90, 0.3);
+  animation: ripple 2s infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Light theme adjustments */
+body.light-theme .music-control.playing {
+  background: linear-gradient(135deg, var(--green-primary), var(--green-light));
+  box-shadow: 0 8px 25px rgba(45, 80, 22, 0.4);
+}
+
+body.light-theme .music-control.playing:active {
+  box-shadow: 0 4px 15px rgba(45, 80, 22, 0.6);
+}
+
+body.light-theme .music-control.paused {
+  background: linear-gradient(135deg, #888, #666);
+}
+
+body.light-theme .music-control.playing::before {
+  background: rgba(45, 80, 22, 0.3);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .music-control {
+    width: 65px;
+    height: 65px;
+    font-size: 26px;
+    bottom: 85px;
+    right: 20px;
+  }
+  
+  .music-control i {
+    font-size: 26px !important;
+  }
+  
+  .music-control.paused i.fa-play {
+    font-size: 30px !important;
+    padding-left: 3px;
+  }
+  
+  .music-control.playing i.fa-music {
+    font-size: 26px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .music-control {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    bottom: 80px;
+    right: 15px;
+  }
+  
+  .music-control i {
+    font-size: 24px !important;
+  }
+  
+  .music-control.paused i.fa-play {
+    font-size: 28px !important;
+    padding-left: 3px;
+  }
+  
+  .music-control.playing i.fa-music {
+    font-size: 24px !important;
+  }
+  
+  .music-waves {
+    height: 18px;
+  }
 }

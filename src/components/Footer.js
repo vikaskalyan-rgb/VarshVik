@@ -35,7 +35,7 @@ function Footer () {
             <p className='footer-tagline'>Two hearts, one beautiful journey</p>
             
             <div className='wedding-date-wrapper'>
-              <p className='wedding-dates'>March 04 & 05, 2026</p>
+              <p className='wedding-dates-footer-f'>March 04 & 05, 2026</p>
             </div>
             
             <div className='footer-hearts'>
