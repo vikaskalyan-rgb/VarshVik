@@ -1,7 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Header () {
   const [isInvitationTamil, setIsInvitationTamil] = useState(false);
+  
+  // Initialize theme from localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-theme');
+    }
+  }, []);
+  
+  const toggleTheme = () => {
+    document.body.classList.toggle('light-theme');
+    const isLight = document.body.classList.contains('light-theme');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  };
   
   const scrollToLocation = (e) => {
     e.preventDefault();
@@ -93,9 +107,20 @@ END:VCALENDAR`;
       <div className='container'>
         <div className='row'>
           <div className='col-md-12 text-center caption'>
-            {/* Om Namah Shivaya - Top */}
+            {/* Om Namah Shivaya with Theme Toggle */}
             <div className='sacred-chant animate-box' data-animate-effect='fadeInDown'>
               <span className='om-symbol'>ॐ नमः शिवाय</span>
+              
+              {/* Theme Toggle Button */}
+              <button 
+                className='theme-toggle-btn'
+                onClick={toggleTheme}
+                title='Toggle Light/Dark Theme'
+                aria-label='Toggle Theme'
+              >
+                <span className='sun-icon'>☀</span>
+                <span className='moon-icon'>🌙</span>
+              </button>
             </div>
             
             <div className='hero-content'>
