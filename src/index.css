@@ -1932,304 +1932,429 @@ body.slide #oliven-aside {
   }
 }
 
-/* ======= WEDDING DAY CELEBRATION - LUXURIOUS DESIGN ======= */
+/* ============================================================
+   WEDDING DAY CELEBRATION - CINEMATIC LUXURY REDESIGN
+   Replace the existing countdown celebration styles with these
+   ============================================================ */
+
+/* ── Base celebration section ── */
+.countdown-section {
+  background: #070707;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── 1. Radial spotlight burst behind content ── */
+.countdown-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%,
+      rgba(212, 169, 104, 0.18) 0%,
+      rgba(189, 148, 90, 0.08) 40%,
+      transparent 70%),
+    radial-gradient(ellipse 120% 80% at 50% 100%,
+      rgba(212, 169, 104, 0.10) 0%,
+      transparent 60%);
+  animation: spotlightPulse 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes spotlightPulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50%       { opacity: 1.0; transform: scale(1.06); }
+}
+
+/* ── 2. Starfield layer ── */
 .celebration-background {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   overflow: hidden;
-  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  z-index: 0;
 }
 
+/* Generate 60 stars via a repeating radial pattern */
+.celebration-background::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(1px 1px at  8%  12%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20%   5%, rgba(212,169,104,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35%  18%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 52%   8%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 67%  22%, rgba(212,169,104,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80%   6%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 93%  15%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at  5%  35%, rgba(212,169,104,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 16%  42%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28%  30%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44%  38%, rgba(212,169,104,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 58%  28%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 73%  44%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88%  33%, rgba(212,169,104,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at  3%  60%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 14%  68%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25%  55%, rgba(212,169,104,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40%  72%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 56%  62%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70%  58%, rgba(212,169,104,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85%  74%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 97%  65%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at  6%  82%, rgba(212,169,104,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 19%  88%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 33%  80%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 48%  92%, rgba(212,169,104,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 62%  85%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 76%  90%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91%  82%, rgba(212,169,104,0.5) 0%, transparent 100%),
+    radial-gradient(2px 2px at 22%  48%, rgba(212,169,104,0.4) 0%, transparent 100%),
+    radial-gradient(2px 2px at 61%  76%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(2px 2px at 78%  20%, rgba(212,169,104,0.35) 0%, transparent 100%);
+  background-size: 100% 100%;
+  animation: starsRotate 120s linear infinite;
+}
+
+@keyframes starsRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Twinkling overlay */
+.celebration-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 25%, white 0%, transparent 100%),
+    radial-gradient(1px 1px at 42% 10%, rgba(212,169,104,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 40%, white 0%, transparent 100%),
+    radial-gradient(1px 1px at 87% 18%, rgba(212,169,104,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 70%, white 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 80%, rgba(212,169,104,0.8) 0%, transparent 100%);
+  background-size: 100% 100%;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0%   { opacity: 0.3; }
+  100% { opacity: 1.0; }
+}
+
+/* ── 3. Gold particle confetti (5 existing particles + enhanced) ── */
 .celebration-particle {
   position: absolute;
-  width: 12px;
-  height: 12px;
-  background: linear-gradient(135deg, #BD945A, #f4d9a8);
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(189, 148, 90, 0.8);
-  animation: luxuryConfetti 6s infinite ease-in-out;
+  animation: particleFall linear infinite;
+  pointer-events: none;
 }
 
+/* Make existing particles more interesting */
 .celebration-particle:nth-child(1) {
-  left: 10%;
+  width: 6px; height: 6px;
+  background: linear-gradient(135deg, #f4d9a8, #BD945A);
+  left: 10%; top: -10%;
+  box-shadow: 0 0 8px rgba(212,169,104,0.8);
+  animation-duration: 7s;
   animation-delay: 0s;
 }
-
 .celebration-particle:nth-child(2) {
-  left: 30%;
-  animation-delay: 1.2s;
+  width: 4px; height: 10px;
+  background: linear-gradient(180deg, #fff, rgba(212,169,104,0.6));
+  border-radius: 2px;
+  left: 25%; top: -10%;
+  animation-duration: 9s;
+  animation-delay: 1.5s;
 }
-
 .celebration-particle:nth-child(3) {
-  left: 50%;
-  animation-delay: 2.4s;
+  width: 8px; height: 8px;
+  background: linear-gradient(135deg, #BD945A, #f4d9a8);
+  left: 50%; top: -10%;
+  box-shadow: 0 0 12px rgba(212,169,104,0.9);
+  animation-duration: 6s;
+  animation-delay: 3s;
 }
-
 .celebration-particle:nth-child(4) {
-  left: 70%;
-  animation-delay: 3.6s;
+  width: 5px; height: 5px;
+  background: rgba(255,255,255,0.9);
+  left: 72%; top: -10%;
+  box-shadow: 0 0 6px rgba(255,255,255,0.8);
+  animation-duration: 8s;
+  animation-delay: 0.8s;
 }
-
 .celebration-particle:nth-child(5) {
-  left: 90%;
-  animation-delay: 4.8s;
-}
-
-@keyframes luxuryConfetti {
-  0% {
-    top: -5%;
-    transform: translateX(0) rotate(0deg) scale(1);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    top: 105%;
-    transform: translateX(150px) rotate(720deg) scale(0.5);
-    opacity: 0;
-  }
-}
-
-.celebration-content {
-  padding: 100px 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.celebration-icon {
-  margin-bottom: 40px;
-  animation: celebrationFloat 2s infinite ease-in-out;
-}
-
-.celebration-icon i {
-  font-size: 120px;
-  background: linear-gradient(135deg, #BD945A 0%, #f4d9a8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 40px rgba(189, 148, 90, 0.8));
-}
-
-@keyframes celebrationFloat {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-20px) scale(1.1);
-  }
-}
-
-.celebration-title {
-  font-family: 'Alex Brush', cursive;
-  font-size: 85px;
-  background: linear-gradient(135deg, #ffffff 0%, #BD945A 50%, #f4d9a8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 25px;
-  animation: fadeInScale 1.2s ease-out;
-  text-shadow: 0 5px 20px rgba(189, 148, 90, 0.3);
-  line-height: 1.2;
-}
-
-.celebration-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  color: rgba(255, 255, 255, 0.9);
-  font-style: italic;
-  margin-bottom: 40px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.celebration-sparkles {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 50px;
-  animation: fadeIn 2s ease-out;
-}
-
-.sparkle {
-  animation: sparkleFloat 3s infinite ease-in-out;
-  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
-}
-
-.sparkle:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.sparkle:nth-child(2) {
-  animation-delay: 1s;
-}
-
-.sparkle:nth-child(3) {
+  width: 7px; height: 7px;
+  background: linear-gradient(135deg, #D4A968, #fff);
+  left: 88%; top: -10%;
+  box-shadow: 0 0 10px rgba(212,169,104,0.7);
+  animation-duration: 10s;
   animation-delay: 2s;
 }
 
-@keyframes sparkleFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg) scale(1.2);
-  }
+@keyframes particleFall {
+  0%   { top: -5%;  transform: translateX(0)    rotate(0deg)   scale(1);   opacity: 0; }
+  5%   {                                                                    opacity: 1; }
+  90%  {                                                                    opacity: 1; }
+  100% { top: 110%; transform: translateX(120px) rotate(600deg) scale(0.4); opacity: 0; }
 }
 
-/* ======= RESPONSIVE DESIGN ======= */
-@media screen and (max-width: 991px) {
-  .countdown-title {
-    font-size: 60px;
-  }
-  
-  .countdown-box {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .countdown-number {
-    font-size: 56px;
-  }
-  
-  .celebration-title {
-    font-size: 70px;
-  }
-  
-  .celebration-icon i {
-    font-size: 100px;
-  }
+/* ── 4. Celebration content layout ── */
+.celebration-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 40px 100px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
-  .countdown-section {
-    padding: 80px 0;
-  }
-  
-  .countdown-wrapper {
-    gap: 20px;
-  }
-  
-  .countdown-box {
-    width: 130px;
-    height: 130px;
-  }
-  
-  .countdown-number {
-    font-size: 44px;
-  }
-  
-  .countdown-label {
-    font-size: 10px;
-    letter-spacing: 2px;
-  }
-  
-  .countdown-separator {
-    font-size: 25px;
-    margin: 0 5px;
-  }
-  
-  .countdown-title {
-    font-size: 48px;
-  }
-  
-  .countdown-message {
-    font-size: 20px;
-  }
-  
-  .celebration-title {
-    font-size: 55px;
-  }
-  
-  .celebration-icon i {
-    font-size: 80px;
-  }
+/* ── 5. Heart icon — orbital rings + beat ── */
+.celebration-icon {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 50px;
+  animation: iconFloat 4s ease-in-out infinite;
 }
 
-@media screen and (max-width: 480px) {
-  .countdown-box {
-    width: 110px;
-    height: 110px;
-  }
-  
-  .countdown-number {
-    font-size: 36px;
-  }
-  
-  .countdown-label {
-    font-size: 9px;
-    letter-spacing: 1px;
-  }
-  
-  .countdown-separator {
-    display: none;
-  }
-  
-  .countdown-wrapper {
-    gap: 12px;
-  }
-  
-  .countdown-title {
-    font-size: 40px;
-  }
-  
-  .countdown-message {
-    font-size: 18px;
-    margin-top: 40px;
-  }
-  
-  .celebration-title {
-    font-size: 45px;
-  }
-  
-  .celebration-sparkles {
-    gap: 25px;
-    font-size: 35px;
-  }
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-18px); }
 }
 
-/* ======= CORE ANIMATIONS ======= */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Ring 1 */
+.celebration-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,169,104,0.25);
+  transform: translate(-50%, -50%);
+  animation: ringExpand 3s ease-out infinite;
+}
+/* Ring 2 */
+.celebration-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,169,104,0.15);
+  transform: translate(-50%, -50%);
+  animation: ringExpand 3s ease-out 1s infinite;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes ringExpand {
+  0%   { width: 80px;  height: 80px;  opacity: 0.8; }
+  100% { width: 300px; height: 300px; opacity: 0; }
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.celebration-icon i {
+  font-size: 100px;
+  background: linear-gradient(135deg, #fff 0%, #f4d9a8 40%, #BD945A 70%, #f4d9a8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: iconShimmer 3s ease-in-out infinite, heartbeat 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(212,169,104,0.6))
+          drop-shadow(0 0 60px rgba(212,169,104,0.3));
+  display: block;
 }
 
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+@keyframes iconShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15%       { transform: scale(1.18); }
+  30%       { transform: scale(1.04); }
+  45%       { transform: scale(1.12); }
+}
+
+/* ── 6. Title — dramatic entrance + shimmer ── */
+.celebration-title {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(56px, 8vw, 95px);
+  line-height: 1.15;
+  margin: 0 0 28px;
+  background: linear-gradient(135deg,
+    #ffffff 0%,
+    #f4d9a8 25%,
+    #BD945A 50%,
+    #f4d9a8 75%,
+    #ffffff 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation:
+    titleReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) both,
+    titleShimmerFlow 4s ease-in-out infinite 1.5s;
+  filter: drop-shadow(0 4px 20px rgba(212,169,104,0.4));
+  letter-spacing: 2px;
+}
+
+@keyframes titleReveal {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.9); filter: blur(8px) drop-shadow(0 4px 20px rgba(212,169,104,0.4)); }
+  100% { opacity: 1; transform: translateY(0)    scale(1);   filter: blur(0)   drop-shadow(0 4px 20px rgba(212,169,104,0.4)); }
+}
+
+@keyframes titleShimmerFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* ── 7. Subtitle ── */
+.celebration-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 1px;
+  margin: 0 0 50px;
+  animation: fadeSlideUp 1s 0.6s both;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+}
+
+@keyframes fadeSlideUp {
+  0%   { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── 8. Sparkles row ── */
+.celebration-sparkles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  animation: fadeSlideUp 1s 1s both;
+}
+
+.sparkle {
+  font-size: 42px;
+  display: inline-block;
+  filter: drop-shadow(0 0 12px rgba(255,215,0,0.7));
+  animation: sparkleOrbit 3.5s ease-in-out infinite;
+}
+.sparkle:nth-child(1) { animation-delay: 0s;    animation-duration: 3.2s; }
+.sparkle:nth-child(2) { animation-delay: 0.6s;  animation-duration: 3.8s; font-size: 52px; }
+.sparkle:nth-child(3) { animation-delay: 1.2s;  animation-duration: 3.0s; }
+
+@keyframes sparkleOrbit {
+  0%, 100% { transform: translateY(0)    rotate(0deg)   scale(1);   }
+  25%       { transform: translateY(-16px) rotate(15deg)  scale(1.15); }
+  50%       { transform: translateY(-8px)  rotate(-5deg)  scale(0.95); }
+  75%       { transform: translateY(-20px) rotate(10deg)  scale(1.1);  }
+}
+
+/* ── 9. Gold ribbon divider ── */
+.celebration-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 45px auto;
+  max-width: 500px;
+  animation: fadeSlideUp 1s 0.9s both;
+}
+.celebration-divider .div-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,169,104,0.8), transparent);
+  box-shadow: 0 0 8px rgba(212,169,104,0.4);
+}
+.celebration-divider .div-heart {
+  font-size: 22px;
+  color: #BD945A;
+  animation: heartPulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(212,169,104,0.7));
+}
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.35); }
+}
+
+/* ── 10. Date badge ── */
+.celebration-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
+  background: rgba(212,169,104,0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212,169,104,0.35);
+  border-radius: 50px;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.15),
+    0 0 20px rgba(212,169,104,0.15);
+  animation: fadeSlideUp 1s 1.3s both, badgeGlow 4s ease-in-out infinite 2.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+.celebration-date-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: linear-gradient(45deg,
+    transparent 40%,
+    rgba(255,255,255,0.12) 50%,
+    transparent 60%);
+  animation: badgeSweep 5s ease-in-out infinite;
+}
+
+@keyframes badgeSweep {
+  0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  50%       { transform: translateX(100%)  translateY(100%)  rotate(45deg); }
+}
+
+@keyframes badgeGlow {
+  0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15), 0 0 20px rgba(212,169,104,0.15); }
+  50%       { box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15), 0 0 40px rgba(212,169,104,0.35); }
+}
+
+.badge-icon {
+  font-size: 20px;
+  filter: drop-shadow(0 0 6px rgba(212,169,104,0.8));
+}
+.badge-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #D4A968;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(212,169,104,0.5);
+}
+
+/* ── 11. Responsive ── */
+@media (max-width: 768px) {
+  .celebration-content { padding: 60px 24px 80px; }
+  .celebration-icon i  { font-size: 72px; }
+  .celebration-sparkles { gap: 22px; }
+  .sparkle { font-size: 34px; }
+  .sparkle:nth-child(2) { font-size: 42px; }
+  .badge-text { font-size: 17px; }
+}
+
+@media (max-width: 480px) {
+  .celebration-content { padding: 50px 18px 70px; }
+  .celebration-icon i  { font-size: 60px; }
+  .celebration-sparkles { gap: 16px; }
+  .sparkle { font-size: 28px; }
+  .sparkle:nth-child(2) { font-size: 36px; }
 }
 /* ===== Story Section - LUXURY DARK REDESIGN ===== */
 .story {

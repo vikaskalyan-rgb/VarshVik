@@ -41,6 +41,7 @@ function Countdown () {
   if (isWeddingDay) {
     return (
       <div id='countdown' className='countdown-section section-padding'>
+        {/* Starfield + particle background */}
         <div className='celebration-background'>
           <div className='celebration-particle'></div>
           <div className='celebration-particle'></div>
@@ -48,20 +49,46 @@ function Countdown () {
           <div className='celebration-particle'></div>
           <div className='celebration-particle'></div>
         </div>
+
         <div className='container'>
           <div className='row'>
             <div className='col-md-12 text-center'>
               <div className='celebration-content'>
+
+                {/* Floating heart with orbital rings */}
                 <div className='celebration-icon'>
                   <i className='ti-heart'></i>
                 </div>
+
+                {/* Main title */}
                 <h2 className='celebration-title'>It's Our Wedding Day!</h2>
-                <p className='celebration-text'>The day we've been waiting for is finally here</p>
+
+                {/* Subtitle */}
+                <p className='celebration-text'>
+                  The day we've been waiting for is finally here
+                </p>
+
+                {/* Gold divider */}
+                <div className='celebration-divider'>
+                  <span className='div-line'></span>
+                  <span className='div-heart'>♥</span>
+                  <span className='div-line'></span>
+                </div>
+
+                {/* Date badge */}
+                <div className='celebration-date-badge'>
+                  <span className='badge-icon'>✦</span>
+                  <span className='badge-text'>5th March 2026</span>
+                  <span className='badge-icon'>✦</span>
+                </div>
+
+                {/* Sparkles */}
                 <div className='celebration-sparkles'>
                   <span className='sparkle'>✨</span>
                   <span className='sparkle'>💐</span>
                   <span className='sparkle'>✨</span>
                 </div>
+
               </div>
             </div>
           </div>
@@ -95,7 +122,6 @@ function Countdown () {
               <span className='divider-icon'>♥</span>
               <span className='divider-line'></span>
             </div>
-            
           </div>
         </div>
         <div className='row'>
